@@ -38,6 +38,17 @@
     visibility: hidden;
   }
 }
+
+@media(min-width: 768px) {
+
+  .navbar-brand > a > img {
+      height: 120px;
+      width: 119px;
+      padding: 19px;
+      margin: -50px;
+  }
+
+}
 /*		Tablet Layout: 768px.
 		Gutters: 24px.
 		Outer margins: 28px.
@@ -58,6 +69,13 @@ px      68    160    252    */
   }
   .navbar-header .navbar-brand a {
     padding: 6px 8px;
+  }
+  .navbar-brand > a > img {
+    height: 70px;
+    width: 70px;
+    padding: 0;
+    margin-left: 10px;
+    margin-top: -27px;
   }
   #hero-area {
     padding: 140px 0;

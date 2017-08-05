@@ -66,6 +66,7 @@ a:hover {
 .moduler {
   padding: 140px 0;
 }
+
 .navbar-default .navbar-nav > li > a:hover {
   color: #02bdd5;
 }
@@ -520,7 +521,7 @@ figure figcaption p {
   color: #02bdd5;
 }
 .cd-headline.slide .cd-words-wrapper {
-  color: #02bdd5;
+  color: #3543DD;
 }
 ul.social-icons {
   height: auto;
