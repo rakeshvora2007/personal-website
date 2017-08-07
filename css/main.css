@@ -297,8 +297,8 @@ a:hover {
   font-size: 30px;
   color: #fff;
 }
-.education.container > .row {
-    margin-bottom: 95px;
+.education > .row {
+    margin-bottom: 10em;
 }
 figure {
   background: #fff;
