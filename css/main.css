@@ -305,6 +305,7 @@ figure {
 figure .img-wrapper {
   position: relative;
   overflow: hidden;
+  height: 150px;
 }
 figure img {
   -webkit-transform: scale3d(1, 1, 1);
