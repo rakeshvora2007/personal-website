@@ -24,7 +24,7 @@ module.exports = {
       new HtmlWebpackPlugin({
          template: __dirname + '/index.html',
          filename: __dirname + '/dist/index.html',
-         inject: 'head'
+         inject: 'body'
       })
    ]
 }

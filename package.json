@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/rakeshvora2007/personal-website#readme",
   "dependencies": {
+    "@material-ui/core": "^4.2.0",
+    "@material-ui/icons": "^4.2.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "webpack": "^4.35.2",

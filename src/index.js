@@ -1,8 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Cards  from "./components/Cards/Cards.jsx"
 
-const Hello = () => {
-  return "Hello";
-};
-
-ReactDOM.render(<Hello />, document.getElementById("root"));
+ReactDOM.render(<Cards />, document.getElementById("root"));
