@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import ProjectCard from "./components/Cards/ProjectCard.jsx"
+import App from "./components/App/App.jsx"
 
-ReactDOM.render(<ProjectCard />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
