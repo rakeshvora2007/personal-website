@@ -15,24 +15,22 @@ const Contact = () => {
                                 <form id="contact-form" method="post" action="sendmail.php" role="form">
 
                                     <div className="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
-                                        <input type="text" placeholder="Your Name" className="form-control" name="name" id="name">
+                                        <input type="text" placeholder="Your Name" className="form-control" name="name" id="name"/>
                                     </div>
 
                                     <div className="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
-                                        <input type="email" placeholder="Your Email" className="form-control" name="email" id="email" >
+                                        <input type="email" placeholder="Your Email" className="form-control" name="email" id="email"/>
                                     </div>
 
                                     <div className="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
-                                        <input type="text" placeholder="Subject" className="form-control" name="subject" id="subject">
+                                        <input type="text" placeholder="Subject" className="form-control" name="subject" id="subject"/>
                                     </div>
 
                                     <div className="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
                                         <textarea rows="6" placeholder="Message" className="form-control" name="message" id="message"></textarea>
                                     </div>
-
-
                                     <div id="submit" className="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.4s">
-                                        <input type="submit" id="contact-submit" className="btn btn-default btn-send" value="Send Message">
+                                        <input type="submit" id="contact-submit" className="btn btn-default btn-send" value="Send Message"/>
                                     </div>
 
                                 </form>
@@ -44,13 +42,13 @@ const Contact = () => {
                     <div className="col-md-4">
                         <div className="address wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
                             <i className="ion-ios-location-outline"></i>
-                            <h5>2404 E Nutwood Ave, CA <br>United States of America,92831</h5>
+                            <h5>2404 E Nutwood Ave, CA <br/>United States of America,92831</h5>
                         </div>
                     </div>
                     <div className="col-md-4">
                         <div className="email wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".7s">
                             <i className="ion-ios-email-outline"></i>
-                            <p>rakeshvora2007@gmail.com<br>mail@rakeshjain.me</p>
+                            <p>rakeshvora2007@gmail.com<br/>mail@rakeshjain.me</p>
                         </div>
                     </div>
                     <div className="col-md-4">

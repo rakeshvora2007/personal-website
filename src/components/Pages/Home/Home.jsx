@@ -11,7 +11,7 @@ const Home = () => {
 
                         <section class="cd-intro">
                             <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s">
-                                <span>HI, MY NAME IS Rakesh Jain & I AM A</span><br>
+                                <span>HI, MY NAME IS Rakesh Jain & I AM A</span><br/>
                                 <span class="cd-words-wrapper">
                                     <b class="is-visible">DEVELOPER</b>
                                     <b>DESIGNER</b>
@@ -19,7 +19,7 @@ const Home = () => {
                             </h1>
                         </section>
                         <h2 class="wow fadeInUp animated" data-wow-delay=".6s">
-                            With 3 years experience, I've occupied many roles including web and mobile application developer,<br>                            software engineer. This site showcases some of my work.
+                            With 3 years experience, I've occupied many roles including web and mobile application developer,<br/>                            software engineer. This site showcases some of my work.
                         </h2>
                         <a class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green" data-wow-delay=".9s" href="#works"
                             data-section="#works">View Works</a>
@@ -47,7 +47,7 @@ const Home = () => {
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <div class="block wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
-                        <img src="images/about/about.jpg" alt="">
+                        <img src="images/about/about.jpg" alt=""/>
                     </div>
                 </div>
             </div>
@@ -59,14 +59,14 @@ const Home = () => {
                 <h1 class="title wow fadeInDown" data-wow-delay=".3s">Latest Works</h1>
                 <p class="wow fadeInDown" data-wow-delay=".5s">
                     This secition shows all the projects recently worked on or still working on. Projects have various diversity which includes
-                    <br> Software Engineering, Web Design, Application Concept/ Prototype, Libraries and Wireframes .
+                    <br/> Software Engineering, Web Design, Application Concept/ Prototype, Libraries and Wireframes .
                 </p>
             </div>
             <div class="row">
                     <div class="col-sm-3">
                             <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
                                 <div class="img-wrapper">
-                                    <img src="images/projects/github-search.png" class="img-responsive" alt="this is a title">
+                                    <img src="images/projects/github-search.png" class="img-responsive" alt="this is a title"/>
                                     <div class="overlay">
                                         <div class="buttons">
                                             <a rel="gallery" class="fancybox" href="https://github.com/rakeshvora2007/github-search-using-react">Demo</a>
@@ -89,7 +89,7 @@ const Home = () => {
                 <div class="col-sm-3">
                     <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
                         <div class="img-wrapper">
-                            <img src="images/projects/WeatherApplication.png" class="img-responsive" alt="this is a title">
+                            <img src="images/projects/WeatherApplication.png" class="img-responsive" alt="this is a title"/>
                             <div class="overlay">
                                 <div class="buttons">
                                     <a rel="gallery" class="fancybox" href="https://github.com/rakeshvora2007/weather-app-using-react-and-redux">Demo</a>
@@ -112,7 +112,7 @@ const Home = () => {
                 <div class="col-sm-3">
                     <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
                         <div class="img-wrapper">
-                            <img src="images/projects/YoutubeSearch.png" class="img-responsive" alt="this is a title">
+                            <img src="images/projects/YoutubeSearch.png" class="img-responsive" alt="this is a title"/>
                             <div class="overlay">
                                 <div class="buttons">
                                     <a rel="gallery" class="fancybox" href="https://github.com/rakeshvora2007/youtube-search-using-react">Demo</a>
@@ -135,7 +135,7 @@ const Home = () => {
                 <div class="col-sm-3">
                     <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
                         <div class="img-wrapper">
-                            <img src="images/projects/bulletin-board.png" class="img-responsive" alt="this is a title">
+                            <img src="images/projects/bulletin-board.png" class="img-responsive" alt="this is a title"/>
                             <div class="overlay">
                                 <div class="buttons">
                                     <a rel="gallery" class="fancybox" href="https://github.com/rakeshvora2007/React-Projects/tree/master/Bulletin%20Board%20Application/bulletin-board">Demo</a>
@@ -160,7 +160,7 @@ const Home = () => {
                 <div class="col-sm-3">
                     <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
                         <div class="img-wrapper">
-                            <img src="images/projects/simple-todos.png" class="img-responsive" alt="this is a title">
+                            <img src="images/projects/simple-todos.png" class="img-responsive" alt="this is a title"/>
                             <div class="overlay">
                                 <div class="buttons">
                                     <a rel="gallery" class="fancybox" href="https://github.com/rakeshvora2007/Meteor-Projects/tree/master/simple-todos">Demo</a>
@@ -184,7 +184,7 @@ const Home = () => {
                 <div class="col-sm-3">
                     <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
                         <div class="img-wrapper">
-                            <img src="images/projects/quiet-earth.png" class="img-responsive" alt="">
+                            <img src="images/projects/quiet-earth.png" class="img-responsive" alt=""/>
                             <div class="overlay">
                                 <div class="buttons">
                                     <a rel="gallery" class="fancybox" href="https://github.com/rakeshvora2007/Meteor-Projects/tree/master/Quietearth">Demo</a>
@@ -208,7 +208,7 @@ const Home = () => {
                 <div class="col-sm-3">
                     <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
                         <div class="img-wrapper">
-                            <img src="images/projects/snippets.png" class="img-responsive" alt="">
+                            <img src="images/projects/snippets.png" class="img-responsive" alt=""/>
                             <div class="overlay">
                                 <div class="buttons">
                                     <a rel="gallery" class="fancybox" href="https://github.com/rakeshvora2007/Meteor-Projects/tree/master/Snippets">Demo</a>
@@ -231,7 +231,7 @@ const Home = () => {
                 <div class="col-sm-3">
                     <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
                         <div class="img-wrapper">
-                            <img src="images/projects/android.png" class="img-responsive" alt="this is a title">
+                            <img src="images/projects/android.png" class="img-responsive" alt="this is a title"/>
                             <div class="overlay">
                                 <div class="buttons">
                                     <a rel="gallery" class="fancybox" href="https://github.com/rakeshvora2007/Adobe-Xd-Projects/blob/master/Android%20proto.xd">Demo</a>
@@ -256,7 +256,7 @@ const Home = () => {
                 <div class="col-sm-3">
                     <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
                         <div class="img-wrapper">
-                            <img src="images/projects/ios.png" class="img-responsive" alt="this is a title">
+                            <img src="images/projects/ios.png" class="img-responsive" alt="this is a title"/>
                             <div class="overlay">
                                 <div class="buttons">
                                     <a rel="gallery" class="fancybox" href="https://github.com/rakeshvora2007/Adobe-Xd-Projects/blob/master/iOS%20proto.xd">Demo</a>
@@ -376,8 +376,8 @@ const Home = () => {
             <div class="row">
                 <div class="col-md-12">
                     <div class="block">
-                        <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">SO WHAT YOU THINK ?</h1>
-                            <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Contact me for any queries or live work, contract projects<br>I always try to reach within 24
+                        <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">SO WHAT YOU THINK ?</h2>
+                            <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Contact me for any queries or live work, contract projects<br/>I always try to reach within 24
                                 hours and hope to reply as soon as possible.</p>
                             <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Contact With Me</a>
                     </div>

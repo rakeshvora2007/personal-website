@@ -7,14 +7,14 @@ const Education = () => {
               <div class="education">
                 <div class="row">
                     <div class="col-md-6 wow fadeInLeft" data-wow-delay=".3s" >
-                        <img src="images/about/csuf.png" alt="" class="img-responsive">
+                        <img src="images/about/csuf.png" alt="" class="img-responsive"/>
                     </div>
                     <div class="col-md-6">
                         <div class="block">
                             <h3 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">California State University, Fullerton</h3>
                             <h4 class="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">GPA: 3.71</h4>
                               <p class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
-                              <h4 class="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms"><b>Coursework:<b></h4>
+                              <h4 class="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms"><b>Coursework:</b></h4>
                                 <ul class="animated bounceInLeft">
                                   <li>Java Back-End Engineering for Enterprise Application</li>
                                   <li>Operating System Design</li>
@@ -32,7 +32,7 @@ const Education = () => {
                           <h3 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">University of Mumbai</h3>
                           <h4 class="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">Percentage: 71% (First Class with Distinction)</h4>
                           <p class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
-                            <h4 class="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms"><b>Coursework:<b></h4>
+                            <h4 class="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms"><b>Coursework:</b></h4>
                             <ul class= "animated bounceInLeft">
                               <li>Data Structure and Algorithm</li>
                               <li>Software Engineering</li>
@@ -61,13 +61,13 @@ const Education = () => {
                       </div>
                   </div>
                     <div class="col-md-6 wow fadeInLeft" data-wow-delay=".3s" >
-                        <img src="images/about/uom.png" alt="" class="img-responsive">
+                        <img src="images/about/uom.png" alt="" class="img-responsive"/>
                     </div>
                 </div>
                 <br />
                 <div class="row">
                     <div class="col-md-6 wow fadeInLeft" data-wow-delay=".3s" >
-                        <img src="images/about/wilson.jpg" alt="" class="img-responsive">
+                        <img src="images/about/wilson.jpg" alt="" class="img-responsive"/>
                     </div>
                     <div class="col-md-6">
                         <div class="block">
