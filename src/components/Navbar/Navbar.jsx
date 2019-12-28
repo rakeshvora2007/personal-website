@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <header id="top-bar" className="navbar-fixed-top animated-header">
         <div className="container">
@@ -19,12 +19,12 @@ const Navbar = () => {
                 <div className="main-menu">
                     <ul className="nav navbar-nav navbar-right">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a onClick={() => props.setPage("Home")}>Home</a>
                         </li>
-                        <li><a href="education.html">Eduaction</a></li>
-                        <li><a href="work-experience.html">Work Experience</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a onClick={() => props.setPage("Education")}>Eduaction</a></li>
+                        <li><a onClick={() => props.setPage("Experience")}>Work Experience</a></li>
+                        <li><a onClick={() => props.setPage("Projects")}>Projects</a></li>
+                        <li><a onClick={() => props.setPage("Contact")}>Contact</a></li>
                     </ul>
                 </div>
             </nav>
