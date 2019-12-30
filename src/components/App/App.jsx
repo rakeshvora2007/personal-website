@@ -5,11 +5,8 @@ import Footer from '../Footer/Footer.jsx'
 
 const App = () => {
     const [page, setPage] = useState();
-
-
-
     return (
-        <div>
+        <div style={{position: "relative"}}>
            <Navbar setPage={setPage}/>
            <DisplayPage page={page}/>
            <Footer /> 

@@ -18,9 +18,7 @@ const Navbar = (props) => {
             <nav className="collapse navbar-collapse navbar-right" role="navigation">
                 <div className="main-menu">
                     <ul className="nav navbar-nav navbar-right">
-                        <li>
-                            <a onClick={() => props.setPage("Home")}>Home</a>
-                        </li>
+                        <li><a onClick={() => props.setPage("Home")}>Home</a></li>
                         <li><a onClick={() => props.setPage("Education")}>Eduaction</a></li>
                         <li><a onClick={() => props.setPage("Experience")}>Work Experience</a></li>
                         <li><a onClick={() => props.setPage("Projects")}>Projects</a></li>
