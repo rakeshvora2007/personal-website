@@ -2,15 +2,15 @@ import React from 'react'
 
 const WorkEx = () => {
     return (
-        <section class="company-description">
-        <div class="container">
-            <div class="education">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="block">
-                            <h3 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">AutoXplorer, Irvine</h3>
-                            <h4 class="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms"><i><b>Software Engineer, Irvine, USA</b></i></h4>
-                            <p class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
+        <section className="company-description">
+        <div className="container">
+            <div className="education">
+                <div className="row">
+                    <div className="col-md-6">
+                        <div className="block">
+                            <h3 className="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">AutoXplorer, Irvine</h3>
+                            <h4 className="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms"><i><b>Software Engineer, Irvine, USA</b></i></h4>
+                            <p className="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
                                 <ul>
                                     <li>Developed a inventory management software using React, Redux and ​ Node.js. Collect dealer’s vehicle information and send
                                             data to other supporting applications</li>
@@ -26,20 +26,20 @@ const WorkEx = () => {
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-6 wow fadeInLeft" data-wow-delay=".3s">
-                            <img src="images/about/20958696.jpg" alt="" class="img-responsive"/>
+                    <div className="col-md-6 wow fadeInLeft" data-wow-delay=".3s">
+                            <img src="images/about/20958696.jpg" alt="" className="img-responsive"/>
                         </div>
                 </div>
                 <br/>
-                <div class="row">
-                    <div class="col-md-6 wow fadeInLeft" data-wow-delay=".3s">
-                        <img src="images/about/prime.jpg" alt="" class="img-responsive"/>
+                <div className="row">
+                    <div className="col-md-6 wow fadeInLeft" data-wow-delay=".3s">
+                        <img src="images/about/prime.jpg" alt="" className="img-responsive"/>
                     </div>
-                    <div class="col-md-6">
-                        <div class="block">
-                            <h3 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">Prime Software Solutions, Mumbai</h3>
-                            <h4 class="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms"><i><b>Software Developer, Mumbai, India</b></i></h4>
-                            <p class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
+                    <div className="col-md-6">
+                        <div className="block">
+                            <h3 className="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">Prime Software Solutions, Mumbai</h3>
+                            <h4 className="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms"><i><b>Software Developer, Mumbai, India</b></i></h4>
+                            <p className="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
                                 <ul>
                                     <li>Developed and maintained the front-end functionality of websites using HTML, CSS and
                                         JavaScript.</li>
