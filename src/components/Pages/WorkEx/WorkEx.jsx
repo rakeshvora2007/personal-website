@@ -13,12 +13,12 @@ const WorkEx = () => {
                         <div className="block">
                             <h3 className="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">Capgemini America Inc, Atlanta</h3>
                             <h4 className="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms"><i><b>Software Engineer, Atlanta, USA</b></i></h4>
-                            <p className="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
+                            <div className="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
                                 <ul>
                                     <li>Developing a routing server which keeps the existing system running while creating whole new experience to user. </li>
                                     <li>Tech Stack: HTML5, CSS3, JQuery, JavaScript, ES3-ES7, Node, (Proprietary products), Git, Gitlab, Meld, Bash Scripting.</li>
                                 </ul>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@ const WorkEx = () => {
                         <div className="block">
                             <h3 className="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">AutoXplorer, Irvine</h3>
                             <h4 className="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms"><i><b>Software Engineer, Irvine, USA</b></i></h4>
-                            <p className="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
+                            <div className="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
                                 <ul>
                                     <li>Developed a inventory management software using React, Redux and ​ Node.js. Collect dealer’s vehicle information and send
                                             data to other supporting applications</li>
@@ -41,7 +41,7 @@ const WorkEx = () => {
                                     <li>Used ​ Web Services ​ for communicating with other application and components</li>
                                     <li>Performed maintenance and updation to existing client ​ Wordpress​ websites</li>
                                 </ul>
-                            </p>
+                            </div>
                         </div>
                     </div>
                     <div className="col-md-6 wow fadeInLeft" data-wow-delay=".3s">
@@ -57,7 +57,7 @@ const WorkEx = () => {
                         <div className="block">
                             <h3 className="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">Prime Software Solutions, Mumbai</h3>
                             <h4 className="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms"><i><b>Software Developer, Mumbai, India</b></i></h4>
-                            <p className="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
+                            <div className="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
                                 <ul>
                                     <li>Developed and maintained the front-end functionality of websites using HTML, CSS and
                                         JavaScript.</li>
@@ -72,7 +72,7 @@ const WorkEx = () => {
                                         and Swing.</li>
                                     <li>Provided assistance and support to programming team members as required.</li>
                                 </ul>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </div>

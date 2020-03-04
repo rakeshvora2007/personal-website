@@ -2,38 +2,38 @@ import React from 'react'
 
 const Education = () => {
     return (
-        <section class="company-description">
-            <div class="container">
-              <div class="education">
-                <div class="row">
-                    <div class="col-md-6 wow fadeInLeft" data-wow-delay=".3s" >
-                        <img src="images/about/csuf.png" alt="" class="img-responsive"/>
+        <section className="company-description">
+            <div className="container">
+              <div className="education">
+                <div className="row">
+                    <div className="col-md-6 wow fadeInLeft" data-wow-delay=".3s" >
+                        <img src="images/about/csuf.png" alt="" className="img-responsive"/>
                     </div>
-                    <div class="col-md-6">
-                        <div class="block">
-                            <h3 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">California State University, Fullerton</h3>
-                            <h4 class="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">GPA: 3.71</h4>
-                              <p class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
-                              <h4 class="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms"><b>Coursework:</b></h4>
-                                <ul class="animated bounceInLeft">
+                    <div className="col-md-6">
+                        <div className="block">
+                            <h3 className="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">California State University, Fullerton</h3>
+                            <h4 className="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">GPA: 3.71</h4>
+                              <div className="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
+                              <h4 className="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms"><b>Coursework:</b></h4>
+                                <ul className="animated bounceInLeft">
                                   <li>Java Back-End Engineering for Enterprise Application</li>
                                   <li>Operating System Design</li>
                                   <li>Advance Hardware Security Design</li>
                                 </ul>
-                            </p>
+                            </div>
 
                         </div>
                     </div>
                 </div>
                 <br/>
-                <div class="row">
-                  <div class="col-md-6">
-                      <div class="block">
-                          <h3 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">University of Mumbai</h3>
-                          <h4 class="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">Percentage: 71% (First Class with Distinction)</h4>
-                          <p class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
-                            <h4 class="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms"><b>Coursework:</b></h4>
-                            <ul class= "animated bounceInLeft">
+                <div className="row">
+                  <div className="col-md-6">
+                      <div className="block">
+                          <h3 className="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">University of Mumbai</h3>
+                          <h4 className="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">Percentage: 71% (First Class with Distinction)</h4>
+                          <div className="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
+                            <h4 className="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms"><b>Coursework:</b></h4>
+                            <ul className= "animated bounceInLeft">
                               <li>Data Structure and Algorithm</li>
                               <li>Software Engineering</li>
                               <li>Object Oriented Analysis and Design</li>
@@ -56,29 +56,29 @@ const Education = () => {
                               <li>Software Testing and Quality Assurance</li>
                               <li>Simulation and Modeling</li>
                             </ul>
-                          </p>
+                          </div>
 
                       </div>
                   </div>
-                    <div class="col-md-6 wow fadeInLeft" data-wow-delay=".3s" >
-                        <img src="images/about/uom.png" alt="" class="img-responsive"/>
+                    <div className="col-md-6 wow fadeInLeft" data-wow-delay=".3s" >
+                        <img src="images/about/uom.png" alt="" className="img-responsive"/>
                     </div>
                 </div>
                 <br />
-                <div class="row">
-                    <div class="col-md-6 wow fadeInLeft" data-wow-delay=".3s" >
-                        <img src="images/about/wilson.jpg" alt="" class="img-responsive"/>
+                <div className="row">
+                    <div className="col-md-6 wow fadeInLeft" data-wow-delay=".3s" >
+                        <img src="images/about/wilson.jpg" alt="" className="img-responsive"/>
                     </div>
-                    <div class="col-md-6">
-                        <div class="block">
-                            <h3 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">Wilson College, Mumbai</h3>
-                            <p class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
+                    <div className="col-md-6">
+                        <div className="block">
+                            <h3 className="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">Wilson College, Mumbai</h3>
+                            <div className="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
                                 <h4>HSC</h4>
                                 <h5>General Science (Mathematics & Biology)</h5>
-                            </p>
-                            <p class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms" >
+                            </div>
+                            <div className="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms" >
                                 
-                            </p>
+                            </div>
 
                         </div>
                     </div>
