@@ -501,6 +501,7 @@ figure figcaption p {
   background-color: #CCC;
 }
 #footer {
+  margin-top: 100px; 
   background: #fff;
   padding: 25px 0;
   color: #555;

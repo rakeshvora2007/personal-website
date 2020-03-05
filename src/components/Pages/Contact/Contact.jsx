@@ -42,20 +42,19 @@ const Contact = () => {
                     <div className="col-md-4">
                         <div className="address wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
                             <i className="ion-ios-location-outline"></i>
-                            <h5>2404 E Nutwood Ave, CA <br/>United States of America,92831</h5>
+                            <h5>United States of America</h5>
                         </div>
                     </div>
                     <div className="col-md-4">
                         <div className="email wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".7s">
                             <i className="ion-ios-email-outline"></i>
-                            <p>rakeshvora2007@gmail.com<br/>mail@rakeshjain.me</p>
+                            <p>rakeshvora2007@gmail.com</p>
                         </div>
                     </div>
                     <div className="col-md-4">
                         <div className="phone wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".9s">
                             <i className="ion-ios-telephone-outline"></i>
                             <p>+1 657-253-9782</p>
-                            <p>+91 982-180-3881</p>
                         </div>
                     </div>
                 </div>

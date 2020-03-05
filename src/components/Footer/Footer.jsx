@@ -5,7 +5,7 @@ const Footer = () => {
         <footer id="footer">
             <div className="container">
                 <div className="col-md-8">
-                    <p className="copyright">Copyright: <span>2017</span> . Design and Developed by <a href="https://github.com/rakeshvora2007">Rakesh Jain</a></p>
+                    <p className="copyright">Copyright: <span>2020</span> . Design and Developed by <a href="https://github.com/rakeshvora2007">Rakesh Jain</a></p>
                 </div>
                 <div className="col-md-4">
                     <ul className="social">
