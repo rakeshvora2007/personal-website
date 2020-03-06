@@ -7,7 +7,7 @@ const WorkEx = () => {
             <div className="education">
             <div className="row">
             <div className="col-md-6 wow fadeInLeft" data-wow-delay=".3s">
-                            <img src="images/about/capgemini.png" height="200px" alt="" className="img-responsive"/>
+                            <img src="images/about/capgemini.png" height="200px" alt="" className="img-responsive comp-img"/>
                         </div>
                     <div className="col-md-6">
                         <div className="block">
@@ -45,13 +45,13 @@ const WorkEx = () => {
                         </div>
                     </div>
                     <div className="col-md-6 wow fadeInLeft" data-wow-delay=".3s">
-                            <img src="images/about/20958696.jpg" alt="" className="img-responsive"/>
+                            <img src="images/about/20958696.jpg" alt="" className="img-responsive comp-img"/>
                         </div>
                 </div>
                 <br/>
                 <div className="row">
                     <div className="col-md-6 wow fadeInLeft" data-wow-delay=".3s">
-                        <img src="images/about/prime.jpg" alt="" className="img-responsive"/>
+                        <img src="images/about/prime.jpg" alt="" className="img-responsive comp-img"/>
                     </div>
                     <div className="col-md-6">
                         <div className="block">

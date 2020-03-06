@@ -1092,3 +1092,7 @@ article {
   color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+.comp-img {
+  max-width: 200px;
+}
