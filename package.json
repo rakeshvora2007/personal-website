@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production && cp -r css build/css && cp -r fonts build/fonts && cp -r less build/less && cp -r js build/js && cp -r images build/images",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -21,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/rakeshvora2007/personal-website/issues"
   },
-  "homepage": "https://github.com/rakeshvora2007/personal-website#readme",
+  "homepage": "https://rakeshvora2007.github.io/personal-site",
   "dependencies": {
     "@material-ui/core": "^4.2.0",
     "@material-ui/icons": "^4.2.1",
@@ -33,9 +35,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",
-    "babel-loader": "^8.0.6",
     "@babel/preset-env": "^7.5.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "gh-pages": "^2.2.0",
     "html-webpack-plugin": "^3.2.0"
   }
 }
