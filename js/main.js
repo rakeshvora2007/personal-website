@@ -113,7 +113,8 @@ $(document).ready(function() {
     let regex = /#secret/;
     let value = window.sessionStorage.getItem("input");
     if (value && value.match(regex)) {
-      console.log("found");
+      var username = prompt("what the heck?");
+      var password = prompt("really thats it?");
       window.sessionStorage.removeItem("input");
     }
   });
