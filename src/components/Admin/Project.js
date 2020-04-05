@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import {imageUpload} from "../../utils/imageUploader";
+
 export const Project = () => {
   const [projects, setProjects] = useState();
   const [projectName, setProjectName] = useState("");
@@ -75,35 +77,6 @@ export const Project = () => {
     setTechnologies(newArray);
   };
 
-
-  const uploadImage = (e) => {
-    // let imageObj = {};
-
-      let imageFormObj = new FormData();
-
-      imageFormObj.append("imageName", "multer-image-" + Date.now());
-      imageFormObj.append("imageData", e.target.files[0]);
-
-      setprojectImage(URL.createObjectURL(e.target.files[0]))
-
-      axios.post(`https://personal-website--backend.herokuapp.com/image/uploadmulter`, imageFormObj)
-        .then(({data}) => {
-          if (data.success) {
-            setImageId(data.data.imageData);
-            setprojectImage(`https://personal-website--backend.herokuapp.com/${data.data.imageData}`)
-            alert("Image has been successfully uploaded using multer");
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-          alert("Error while uploading image using multer");
-        });
-  }
-
-
-
-
-
   return (
     <>
       <div style={styles.header}>
@@ -162,7 +135,7 @@ export const Project = () => {
             Add
           </button>
           Project Image :
-          <input type="file" id="imgInp" required onChange={e => uploadImage(e)}/>
+          <input type="file" id="imgInp" required onChange={e => imageUpload(e, imageUrl => setprojectImage(imageUrl))}/>
           <img
             id="blah"
             src={projectImage}
