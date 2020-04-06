@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import {imageUpload} from "../../utils/imageUploader";
+import {ImageUpload} from "../../utils/ImageUploader.jsx";
 
 export const Project = () => {
   const [projects, setProjects] = useState();
   const [projectName, setProjectName] = useState("");
   const [subtitle, setSubtitle] = useState("");
   const [technologies, setTechnologies] = useState([]);
-  const [projectImage, setprojectImage] = useState();
-  const [imageId, setImageId] = useState();
+  const [imageUrl, setImageUrl] = useState();
 
   useEffect(() => {
     console.log(projects);
@@ -20,29 +19,13 @@ export const Project = () => {
       });
   }, []);
 
-  /* const readURL = input => {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-
-      reader.onload = function(e) {
-        $("#blah").attr("src", e.target.result);
-      };
-
-      reader.readAsDataURL(input.files[0]); // convert to base64 string
-    }
-  };
-
-  $("#imgInp").change(function() {
-    readURL(this);
-  }); */
-
   const addProject = () => {
     axios
       .post("https://personal-website--backend.herokuapp.com/project", {
         projectName,
         subtitle,
         technologies,
-        projectImage
+        projectImage: imageUrl
       })
       .then(newProject => {
         const newProjectsArray = [...projects, newProject.data.data];
@@ -52,9 +35,17 @@ export const Project = () => {
 
   const deleteProject = id => {};
 
+  const clearForms = () => {
+    setProjectName("");
+    setSubtitle("");
+    setTechnologies([]);
+    setImageUrl("");
+  }
+
   const handleSubmit = e => {
     e.preventDefault();
     addProject();
+    clearForms();
   };
 
   const onAdd = () => {
@@ -135,14 +126,7 @@ export const Project = () => {
             Add
           </button>
           Project Image :
-          <input type="file" id="imgInp" required onChange={e => imageUpload(e, imageUrl => setprojectImage(imageUrl))}/>
-          <img
-            id="blah"
-            src={projectImage}
-            alt="No image selected"
-            height="300px"
-            width="300px"
-          />
+          <ImageUpload setImageUrl={setImageUrl}/>
           <button type="submit">Submit</button>
         </div>
       </form>
