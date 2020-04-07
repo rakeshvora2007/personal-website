@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 
-import {ImageUpload} from "../../utils/ImageUploader.jsx";
+import imageUploader from "../../utils/imageUploader.js";
+import { ImageViewer } from "../../utils/ImageViewer.jsx";
 
 export const Project = () => {
   const [projects, setProjects] = useState();
@@ -9,6 +10,8 @@ export const Project = () => {
   const [subtitle, setSubtitle] = useState("");
   const [technologies, setTechnologies] = useState([]);
   const [imageUrl, setImageUrl] = useState();
+
+  const childRef = useRef();
 
   useEffect(() => {
     console.log(projects);
@@ -20,17 +23,21 @@ export const Project = () => {
   }, []);
 
   const addProject = () => {
-    axios
-      .post("https://personal-website--backend.herokuapp.com/project", {
-        projectName,
-        subtitle,
-        technologies,
-        projectImage: imageUrl
-      })
-      .then(newProject => {
-        const newProjectsArray = [...projects, newProject.data.data];
-        setProjects(newProjectsArray);
-      });
+    // submit image
+    imageUploader(imageUrl).then(firebaseUrl => {
+      // execute add project api
+      axios
+        .post("https://personal-website--backend.herokuapp.com/project", {
+          projectName,
+          subtitle,
+          technologies,
+          projectImage: firebaseUrl
+        })
+        .then(newProject => {
+          const newProjectsArray = [...projects, newProject.data.data];
+          setProjects(newProjectsArray);
+        });
+    });
   };
 
   const deleteProject = id => {};
@@ -40,7 +47,8 @@ export const Project = () => {
     setSubtitle("");
     setTechnologies([]);
     setImageUrl("");
-  }
+    childRef.current.clearImage();
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -48,13 +56,18 @@ export const Project = () => {
     clearForms();
   };
 
+  const handleImageUrl = url => {
+    setImageUrl(url);
+  };
+
+
   const onAdd = () => {
     const newArray = [...technologies, " "];
     setTechnologies(newArray);
   };
 
   const onDelete = index => {
-    console.log(index)
+    console.log(index);
     const newArray = [
       ...technologies.slice(0, index),
       ...technologies.slice(index + 1)
@@ -85,7 +98,13 @@ export const Project = () => {
                       return <span key={index}>{technology}</span>;
                     })
                   : null}
-                {project.projectImage ? <img src={project.projectImage} height="200px" width="200px"/> : null}
+                {project.projectImage ? (
+                  <img
+                    src={project.projectImage}
+                    height="200px"
+                    width="200px"
+                  />
+                ) : null}
               </div>
             );
           })
@@ -126,7 +145,7 @@ export const Project = () => {
             Add
           </button>
           Project Image :
-          <ImageUpload setImageUrl={setImageUrl}/>
+          <ImageViewer handleImageUrl={handleImageUrl} ref={childRef}/>
           <button type="submit">Submit</button>
         </div>
       </form>
