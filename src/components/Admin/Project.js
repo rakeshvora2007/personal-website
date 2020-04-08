@@ -10,11 +10,11 @@ export const Project = () => {
   const [subtitle, setSubtitle] = useState("");
   const [technologies, setTechnologies] = useState([]);
   const [imageUrl, setImageUrl] = useState();
+  const [loading, setLoading] = useState(false);
 
   const childRef = useRef();
 
   useEffect(() => {
-    console.log(projects);
     axios
       .get("https://personal-website--backend.herokuapp.com/project")
       .then(({ data }) => {
@@ -23,6 +23,7 @@ export const Project = () => {
   }, []);
 
   const addProject = () => {
+    setLoading(true);
     // submit image
     imageUploader(imageUrl).then(firebaseUrl => {
       // execute add project api
@@ -36,6 +37,7 @@ export const Project = () => {
         .then(newProject => {
           const newProjectsArray = [...projects, newProject.data.data];
           setProjects(newProjectsArray);
+          setLoading(false);
           clearForms();
         });
     });
@@ -77,7 +79,6 @@ export const Project = () => {
   };
 
   const onDelete = index => {
-    console.log(index);
     const newArray = [
       ...technologies.slice(0, index),
       ...technologies.slice(index + 1)
@@ -90,6 +91,10 @@ export const Project = () => {
     newArray[index] = value;
     setTechnologies(newArray);
   };
+
+  if(loading) {
+    return <div>Loading....</div>
+  }
 
   return (
     <>
@@ -107,15 +112,19 @@ export const Project = () => {
               <tr key={project._id}>
                 <td style={styles.tableData}>{project.projectName}</td>
                 <td style={styles.tableData}>{project.subtitle}</td>
+                <td style={styles.tableData}>
+                <ol>
                 {project.technologies
                   ? project.technologies.map((technology, index) => {
                       return (
-                        <td style={styles.tableData} key={index}>
-                          {technology}
-                        </td>
+                       
+                          <li key={index}>{technology}</li>
+                        
                       );
                     })
                   : "N/A"}
+                  </ol>
+                  </td>
                 {project.projectImage ? (
                   <td style={styles.tableData}>
                     <img
