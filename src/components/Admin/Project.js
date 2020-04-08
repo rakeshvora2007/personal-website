@@ -36,11 +36,23 @@ export const Project = () => {
         .then(newProject => {
           const newProjectsArray = [...projects, newProject.data.data];
           setProjects(newProjectsArray);
+          clearForms();
         });
     });
   };
 
-  const deleteProject = id => {};
+  const deleteProject = id => {
+    const _id = id;
+    axios
+      .delete("https://personal-website--backend.herokuapp.com/project", { data: { _id } })
+      .then(deletedProject => {
+        const deleted = deletedProject.data.data;
+        const newProjectsArray = projects.filter(
+          project => project._id !== deleted._id
+        );
+        setProjects(newProjectsArray);
+      });
+  };
 
   const clearForms = () => {
     setProjectName("");
@@ -53,13 +65,11 @@ export const Project = () => {
   const handleSubmit = e => {
     e.preventDefault();
     addProject();
-    clearForms();
   };
 
   const handleImageUrl = url => {
     setImageUrl(url);
   };
-
 
   const onAdd = () => {
     const newArray = [...technologies, " "];
@@ -83,35 +93,56 @@ export const Project = () => {
 
   return (
     <>
-      <div style={styles.header}>
-        <div>Project Name</div>
-        <div>Subtitles</div>
-        <div>Technologies</div>
-        <div>Project Image</div>
+      <table style={styles.table}>
+        <tr>
+          <th style={styles.tableData}>Project Name</th>
+          <th style={styles.tableData}>Subtitles</th>
+          <th style={styles.tableData}>Technologies</th>
+          <th style={styles.tableData}>Project Image</th>
+          <th style={styles.tableData}>Options</th>
+        </tr>
         {projects ? (
           projects.map(project => {
             return (
-              <div key={project._id}>
-                {project.projectName} : {project.subtitle}
+              <tr key={project._id}>
+                <td style={styles.tableData}>{project.projectName}</td>
+                <td style={styles.tableData}>{project.subtitle}</td>
                 {project.technologies
                   ? project.technologies.map((technology, index) => {
-                      return <span key={index}>{technology}</span>;
+                      return (
+                        <td style={styles.tableData} key={index}>
+                          {technology}
+                        </td>
+                      );
                     })
-                  : null}
+                  : "N/A"}
                 {project.projectImage ? (
-                  <img
-                    src={project.projectImage}
-                    height="200px"
-                    width="200px"
-                  />
-                ) : null}
-              </div>
+                  <td style={styles.tableData}>
+                    <img
+                      src={project.projectImage}
+                      height="100px"
+                      width="100px"
+                    />
+                  </td>
+                ) : (
+                  "N/A"
+                )}
+                <td style={styles.tableData}>
+                  <button
+                    onClick={() => {
+                      deleteProject(project._id);
+                    }}
+                  >
+                    Delete Project
+                  </button>
+                </td>
+              </tr>
             );
           })
         ) : (
           <div>None</div>
         )}
-      </div>
+      </table>
       <form onSubmit={handleSubmit}>
         <div style={styles.form}>
           Project Name:
@@ -145,7 +176,7 @@ export const Project = () => {
             Add
           </button>
           Project Image :
-          <ImageViewer handleImageUrl={handleImageUrl} ref={childRef}/>
+          <ImageViewer handleImageUrl={handleImageUrl} ref={childRef} />
           <button type="submit">Submit</button>
         </div>
       </form>
@@ -154,13 +185,19 @@ export const Project = () => {
 };
 
 const styles = {
-  header: {
-    display: "inline-flex",
-    border: "2px solid black"
+  table: {
+    fontFamily: '"Trebuchet MS", Arial, Helvetica, sans-serif',
+    border: "2px solid black",
+    borderCollapse: "collapse",
+    margin: "50px 0px 0px 50px",
+    fontSize: "24px"
   },
   form: {
     margin: "200px",
     display: "inline-flex",
     flexDirection: "column"
+  },
+  tableData: {
+    border: "1px solid black"
   }
 };
