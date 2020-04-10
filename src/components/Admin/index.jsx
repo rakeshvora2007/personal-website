@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import { Project } from "./Project.js";
+import Project  from "./Project.js";
 
 const Admin = () => {
   const [data, setData] = useState([]);
