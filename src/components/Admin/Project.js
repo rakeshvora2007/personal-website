@@ -11,20 +11,112 @@ import useNetworkRequest from "../CustomHooks/useNetworkRequest";
 import withRequest from "../HOC/withRequest.js";
 
 const Project = (props) => {
-  console.log(props);
-  switch(props.status) {
-    case "loading": return <div>Loading...</div>;
-    case "error": return <div>Error...</div>;
-    case "data": return <div>{JSON.stringify(props.data)}</div>;
-  }
-  return(
-    <div>Project</div>
-  )
-  const [projects, setProjects] = useState();
+  // const [projects, setProjects] = useState();
   const [projectName, setProjectName] = useState("");
   const [subtitle, setSubtitle] = useState("");
   const [technologies, setTechnologies] = useState([]);
   const [imageUrl, setImageUrl] = useState();
+  console.log(props);
+  switch(props.status) {
+    case "loading": return <div>Loading...</div>;
+    case "error": return <div>Error...</div>;
+    case "data": const projects = props.data.data; return (
+      <>
+        <table style={styles.table}>
+          <thead>
+            <tr>
+              <th style={styles.tableData}>Project Name</th>
+              <th style={styles.tableData}>Subtitles</th>
+              <th style={styles.tableData}>Technologies</th>
+              <th style={styles.tableData}>Project Image</th>
+              <th style={styles.tableData}>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            {projects && projects.length ? (
+              projects.map(project => {
+                return (
+                  <tr key={project._id}>
+                    <td style={styles.tableData}>{project.projectName}</td>
+                    <td style={styles.tableData}>{project.subtitle}</td>
+                    <td style={styles.tableData}>
+                      <ol>
+                        {project.technologies
+                          ? project.technologies.map((technology, index) => {
+                              return <li key={index}>{technology}</li>;
+                            })
+                          : "N/A"}
+                      </ol>
+                    </td>
+                    {project.projectImage ? (
+                      <td style={styles.tableData}>
+                        <img
+                          src={project.projectImage}
+                          height="100px"
+                          width="100px"
+                        />
+                      </td>
+                    ) : (
+                      "N/A"
+                    )}
+                    <td style={styles.tableData}>
+                      <button
+                        onClick={() => {
+                          deleteProject(project._id);
+                        }}
+                      >
+                        Delete Project
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })
+            ) : (
+              <tr><td>No Projects</td></tr>
+            )}
+          </tbody>
+        </table>
+        {/* <form onSubmit={handleSubmit}>
+          <div style={styles.form}>
+            Project Name:
+            <input
+              name="projectName"
+              value={projectName}
+              onChange={e => setProjectName(e.target.value)}
+              required
+            />
+            Subititles:
+            <input
+              name="subtitle"
+              value={subtitle}
+              onChange={e => setSubtitle(e.target.value)}
+              required
+            />
+            Technologies:
+            {technologies.map((technology, index) => {
+              return (
+                <div key={index}>
+                  <input
+                    name={technology}
+                    value={technology}
+                    onChange={e => handleChange(index, e.target.value)}
+                  />
+                  <span onClick={() => onDelete(index)}>x</span>
+                </div>
+              );
+            })}
+            <button type="button" onClick={() => onAdd()}>
+              Add
+            </button>
+            Project Image :
+            <ImageViewer handleImageUrl={handleImageUrl} ref={childRef} />
+            <button type="submit">Submit</button>
+          </div>
+        </form> */}
+      </>
+    );
+  }
+
   // const [loading, setLoading] = useState(false);
 /* 
   const {status, data} = useNetworkRequest("https://personal-website--backend.herokuapp.com/project");
@@ -130,101 +222,7 @@ const Project = (props) => {
   //   return <Loading />;
   // }
 
-  // return (
-  //   <>
-  //     <table style={styles.table}>
-  //       <thead>
-  //         <tr>
-  //           <th style={styles.tableData}>Project Name</th>
-  //           <th style={styles.tableData}>Subtitles</th>
-  //           <th style={styles.tableData}>Technologies</th>
-  //           <th style={styles.tableData}>Project Image</th>
-  //           <th style={styles.tableData}>Options</th>
-  //         </tr>
-  //       </thead>
-  //       <tbody>
-  //         {projects && projects.length ? (
-  //           projects.map(project => {
-  //             return (
-  //               <tr key={project._id}>
-  //                 <td style={styles.tableData}>{project.projectName}</td>
-  //                 <td style={styles.tableData}>{project.subtitle}</td>
-  //                 <td style={styles.tableData}>
-  //                   <ol>
-  //                     {project.technologies
-  //                       ? project.technologies.map((technology, index) => {
-  //                           return <li key={index}>{technology}</li>;
-  //                         })
-  //                       : "N/A"}
-  //                   </ol>
-  //                 </td>
-  //                 {project.projectImage ? (
-  //                   <td style={styles.tableData}>
-  //                     <img
-  //                       src={project.projectImage}
-  //                       height="100px"
-  //                       width="100px"
-  //                     />
-  //                   </td>
-  //                 ) : (
-  //                   "N/A"
-  //                 )}
-  //                 <td style={styles.tableData}>
-  //                   <button
-  //                     onClick={() => {
-  //                       deleteProject(project._id);
-  //                     }}
-  //                   >
-  //                     Delete Project
-  //                   </button>
-  //                 </td>
-  //               </tr>
-  //             );
-  //           })
-  //         ) : (
-  //           <tr><td>No Projects</td></tr>
-  //         )}
-  //       </tbody>
-  //     </table>
-  //     <form onSubmit={handleSubmit}>
-  //       <div style={styles.form}>
-  //         Project Name:
-  //         <input
-  //           name="projectName"
-  //           value={projectName}
-  //           onChange={e => setProjectName(e.target.value)}
-  //           required
-  //         />
-  //         Subititles:
-  //         <input
-  //           name="subtitle"
-  //           value={subtitle}
-  //           onChange={e => setSubtitle(e.target.value)}
-  //           required
-  //         />
-  //         Technologies:
-  //         {technologies.map((technology, index) => {
-  //           return (
-  //             <div key={index}>
-  //               <input
-  //                 name={technology}
-  //                 value={technology}
-  //                 onChange={e => handleChange(index, e.target.value)}
-  //               />
-  //               <span onClick={() => onDelete(index)}>x</span>
-  //             </div>
-  //           );
-  //         })}
-  //         <button type="button" onClick={() => onAdd()}>
-  //           Add
-  //         </button>
-  //         Project Image :
-  //         <ImageViewer handleImageUrl={handleImageUrl} ref={childRef} />
-  //         <button type="submit">Submit</button>
-  //       </div>
-  //     </form>
-  //   </>
-  // );
+  
 };
 
 const styles = {
