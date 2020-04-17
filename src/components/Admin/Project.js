@@ -6,21 +6,47 @@ import { ImageViewer } from "../../utils/ImageViewer.jsx";
 import { Loading } from "../Reusables/Loading.jsx";
 import { withLogging } from "../HOC/withLogging.jsx";
 
-
 import useNetworkRequest from "../CustomHooks/useNetworkRequest";
 import withRequest from "../HOC/withRequest.js";
 
-const Project = (props) => {
-  // const [projects, setProjects] = useState();
+const Project = ({ status, error, loading, data, handleAdd, handleDelete, handleUpdate, imageView }) => {
   const [projectName, setProjectName] = useState("");
   const [subtitle, setSubtitle] = useState("");
   const [technologies, setTechnologies] = useState([]);
-  const [imageUrl, setImageUrl] = useState();
-  console.log(props);
-  switch(props.status) {
-    case "loading": return <div>Loading...</div>;
-    case "error": return <div>Error...</div>;
-    case "data": const projects = props.data.data; return (
+  // const [imageUrl, setImageUrl] = useState();
+  const childRef = useRef();
+
+  // const handleImageUrl = url => {
+  //   setImageUrl(url);
+  // };
+
+  const onAdd = () => {
+    const newArray = [...technologies, " "];
+    setTechnologies(newArray);
+  };
+
+  const onDelete = index => {
+    const newArray = [
+      ...technologies.slice(0, index),
+      ...technologies.slice(index + 1)
+    ];
+    setTechnologies(newArray);
+  };
+
+  const handleChange = (index, value) => {
+    const newArray = technologies.slice(0);
+    newArray[index] = value;
+    setTechnologies(newArray);
+  };
+
+  const newValues = {
+    projectName,
+    subtitle,
+    technologies
+  };
+
+  const renderUI = projects => {
+    return (
       <>
         <table style={styles.table}>
           <thead>
@@ -62,7 +88,7 @@ const Project = (props) => {
                     <td style={styles.tableData}>
                       <button
                         onClick={() => {
-                          deleteProject(project._id);
+                          handleDelete(project._id);
                         }}
                       >
                         Delete Project
@@ -72,11 +98,13 @@ const Project = (props) => {
                 );
               })
             ) : (
-              <tr><td>No Projects</td></tr>
+              <tr>
+                <td>No Projects</td>
+              </tr>
             )}
           </tbody>
         </table>
-        {/* <form onSubmit={handleSubmit}>
+        <form>
           <div style={styles.form}>
             Project Name:
             <input
@@ -109,16 +137,27 @@ const Project = (props) => {
               Add
             </button>
             Project Image :
-            <ImageViewer handleImageUrl={handleImageUrl} ref={childRef} />
-            <button type="submit">Submit</button>
+            {imageView}
+            <button type="button" onClick={() => handleAdd(newValues)}>
+              Submit
+            </button>
           </div>
-        </form> */}
+        </form>
       </>
     );
+  };
+
+  switch (status) {
+    case "loading":
+      return <div>Loading...</div>;
+    case "error":
+      console.log(error);
+    case "data":
+      return renderUI(data);
   }
 
   // const [loading, setLoading] = useState(false);
-/* 
+  /* 
   const {status, data} = useNetworkRequest("https://personal-website--backend.herokuapp.com/project");
 
   switch(status) {
@@ -130,8 +169,6 @@ const Project = (props) => {
   return(
     <div>Project</div>
   ) */
-
-  // const childRef = useRef();
 
   // useEffect(() => {
   //   console.log("Project")
@@ -195,34 +232,11 @@ const Project = (props) => {
   //   addProject();
   // };
 
-  // const handleImageUrl = url => {
-  //   setImageUrl(url);
-  // };
-
-  // const onAdd = () => {
-  //   const newArray = [...technologies, " "];
-  //   setTechnologies(newArray);
-  // };
-
-  // const onDelete = index => {
-  //   const newArray = [
-  //     ...technologies.slice(0, index),
-  //     ...technologies.slice(index + 1)
-  //   ];
-  //   setTechnologies(newArray);
-  // };
-
-  // const handleChange = (index, value) => {
-  //   const newArray = technologies.slice(0);
-  //   newArray[index] = value;
-  //   setTechnologies(newArray);
-  // };
+  
 
   // if (loading) {
   //   return <Loading />;
   // }
-
-  
 };
 
 const styles = {
@@ -243,4 +257,4 @@ const styles = {
   }
 };
 
-export default withRequest(withLogging(Project), "https://personal-website--backend.herokuapp.com/project");
+export default withRequest(withLogging(Project), "project");

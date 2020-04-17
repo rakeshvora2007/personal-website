@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import Project  from "./Project.js";
+import Education from "./Education";
 
 const Admin = () => {
   const [data, setData] = useState([]);
@@ -56,6 +57,7 @@ const Admin = () => {
         </div>
       </header> */}
       <Project />
+      {/* <Education /> */}
     </div>
   );
 };
