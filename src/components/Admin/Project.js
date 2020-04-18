@@ -1,24 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
-import axios from "axios";
-
-import imageUploader from "../../utils/imageUploader.js";
-import { ImageViewer } from "../../utils/ImageViewer.jsx";
-import { Loading } from "../Reusables/Loading.jsx";
+import React, { useState } from "react";
 import { withLogging } from "../HOC/withLogging.jsx";
-
-import useNetworkRequest from "../CustomHooks/useNetworkRequest";
 import withRequest from "../HOC/withRequest.js";
 
 const Project = ({ status, error, loading, data, handleAdd, handleDelete, handleUpdate, imageView }) => {
   const [projectName, setProjectName] = useState("");
   const [subtitle, setSubtitle] = useState("");
   const [technologies, setTechnologies] = useState([]);
-  // const [imageUrl, setImageUrl] = useState();
-  const childRef = useRef();
-
-  // const handleImageUrl = url => {
-  //   setImageUrl(url);
-  // };
 
   const onAdd = () => {
     const newArray = [...technologies, " "];
@@ -149,6 +136,7 @@ const Project = ({ status, error, loading, data, handleAdd, handleDelete, handle
 
   switch (status) {
     case "loading":
+      console.log("loading........." + loading)
       return <div>Loading...</div>;
     case "error":
       console.log(error);
@@ -156,87 +144,14 @@ const Project = ({ status, error, loading, data, handleAdd, handleDelete, handle
       return renderUI(data);
   }
 
-  // const [loading, setLoading] = useState(false);
-  /* 
-  const {status, data} = useNetworkRequest("https://personal-website--backend.herokuapp.com/project");
-
-  switch(status) {
-    case "loading": return <div>Loading...</div>;
-    case "error": return <div>Error...</div>;
-    case "data": return <div>{JSON.stringify(data)}</div>;
-  }
-
-  return(
-    <div>Project</div>
-  ) */
-
-  // useEffect(() => {
-  //   console.log("Project")
-  //   axios
-  //     .get("https://personal-website--backend.herokuapp.com/project")
-  //     .then(({ data }) => {
-  //       setProjects(data.data);
-  //     });
-  // }, []);
-
-  // const addProject = () => {
-  //   setLoading(true);
-  //   // submit image
-  //   imageUploader(imageUrl).then(firebaseUrl => {
-  //     // execute add project api
-  //     axios
-  //       .post("https://personal-website--backend.herokuapp.com/project", {
-  //         projectName,
-  //         subtitle,
-  //         technologies,
-  //         projectImage: firebaseUrl
-  //       })
-  //       .then(newProject => {
-  //         const newProjectsArray = [...projects, newProject.data.data];
-  //         setProjects(newProjectsArray);
-  //         setLoading(false);
-  //         clearForms();
-  //       });
-  //   });
-  // };
-
-  // const deleteProject = id => {
-  //   const _id = id;
-  //   axios
-  //     .delete("https://personal-website--backend.herokuapp.com/project", {
-  //       data: { _id }
-  //     })
-  //     .then(deletedProject => {
-  //       if (deletedProject.statusText === "deleted") {
-  //         const newProjectsArray = projects.filter(
-  //           project => project._id !== id
-  //         );
-  //         setProjects(newProjectsArray);
-  //       }
-  //     })
-  //     .catch(error => {
-  //       throw new Error(error);
-  //     });
-  // };
-
   // const clearForms = () => {
   //   setProjectName("");
   //   setSubtitle("");
   //   setTechnologies([]);
   //   setImageUrl("");
   //   childRef.current.clearImage();
-  // };
+  // };  
 
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   addProject();
-  // };
-
-  
-
-  // if (loading) {
-  //   return <Loading />;
-  // }
 };
 
 const styles = {

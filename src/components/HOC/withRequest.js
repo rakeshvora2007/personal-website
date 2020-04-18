@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import useNetworkRequest from "../CustomHooks/useNetworkRequest";
-import useNetworkRequest2 from "../CustomHooks/useNetworkRequest2";
 import imageUploader from "../../utils/imageUploader";
 import { ImageViewer } from "../../utils/ImageViewer.jsx";
 
 const withRequest = (WrappedComponent, category) => props => {
-  const { status, loading, error, data } = useNetworkRequest(category, "GET");
-  const {fxn, status: defStatus, loading: defLoading, error: defError, data: defData } = useNetworkRequest2();
+  // const { status, loading, error, data } = useNetworkRequest(category, "GET");
+  const {fxn, status, loading, error, currentData } = useNetworkRequest(category);
   const [imageUrl, setImageUrl] = useState();
   const childRef = useRef();
 
@@ -14,36 +13,44 @@ const withRequest = (WrappedComponent, category) => props => {
     setImageUrl(url);
   };
 
-  const handleAdd = data => {
-    console.log(data);
-    imageUploader(imageUrl).then(firebaseUrl => {
-      data["projectImage"] = firebaseUrl;
-      fxn(category, "ADD", data);
-    });
-    console.log("handle add");
+
+  const handleAdd = async data => {
+      console.log("handle add");
+    let firebaseUrl = await imageUploader(imageUrl);
+    data["projectImage"] = firebaseUrl;
+    fxn("ADD", data);
+/* 
+    .then(async firebaseUrl => {
+    }); */
   };
 
   const handleDelete = id => {
     console.log("handle delete");
-    fxn(category, "DELETE", null, id);
+    fxn("DELETE", null, id);
   };
 
-  const handleUpdate = () => {
+  const handleUpdate = data => {
     console.log("handle update");
-    fxn(category, "UPDATE", data);
+    fxn("UPDATE", data);
   };
+
+/*   useEffect(() => {
+    console.log("with Request loaded... DATA ONLY");
+    console.log(data)
+  }, [data]); */
 
   useEffect(() => {
-    console.log("with Request loaded...");
-  }, []);
+    console.log("with Request loaded... NEW DATA");
+    console.log(currentData)
+  }, [currentData]);
 
   return (
     <WrappedComponent
       {...props}
-      status={status}
+      status={status }
       loading={loading}
       error={error}
-      data={data}
+      data={currentData}
       handleAdd={handleAdd}
       handleDelete={handleDelete}
       handleUpdate={handleUpdate}

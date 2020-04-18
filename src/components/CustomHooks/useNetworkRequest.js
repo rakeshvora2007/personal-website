@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 /* import {
@@ -8,38 +8,77 @@ import axios from "axios";
   updateRequest
 } from "../Admin/RequestAssociation"; */
 
-const useNetworkRequest = (category, type, requestData, _id) => {
+const useNetworkRequest = category => {
+  let url = `https://personal-website--backend.herokuapp.com/${category}`;
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [data, setData] = useState([]);
+  const [currentData, setcurrentData] = useState([]);
   const [status, setStatus] = useState("loading");
 
   useEffect(() => {
+    const fetchData = (async () => {
+      setStatus("loading");
+      setLoading(true);
+      try {
+        let { data } = await axios.get(url);
+        setcurrentData(data.data);
+        setStatus("data");
+      } catch (error) {
+        setStatus("error");
+        setError(error);
+      }
+      setLoading(false);
+    })();
+  }, [category]);
+
+  const fxn = async (type, requestData, _id) => {
     setStatus("loading");
     setLoading(true);
     switch (type) {
-      case "GET": {
-        let url = `https://personal-website--backend.herokuapp.com/${category}`;
-        // send request with appropriate data
-        axios
-          .get(url)
-          .then(({ data }) => {
-            console.log(data.data)
-            setData(data.data);
-            setStatus("data");
-            setLoading(false);
-          })
-          .catch(error => {
-            setStatus("error");
-            setError(error);
-            setLoading(false);
-          });
-          break;
+      case "ADD": {
+        try {
+          let { data } = await axios.post(url, requestData);
+          let newData = [...currentData, data.data];
+          setcurrentData(newData);
+          setStatus("data");
+        } catch (error) {
+          setStatus("error");
+          setError(error);
+        }
+        setLoading(false);
+        break;
+      }
+      case "DELETE": {
+        let deleted = await axios.delete(url, { data: { _id } });
+        try {
+          if (deleted.statusText === "deleted") {
+            const newDataArray = currentData.filter(data => data._id !== _id);
+            setcurrentData(newDataArray);
+          }
+          setStatus("data");
+        } catch (error) {
+          setStatus("error");
+          setError(error);
+        }
+        setLoading(false);
+        break;
+      }
+      case "UPDATE": {
+        let { data } = await axios.put(url, requestData);
+        try {
+          let newData = [...currentData, data.data];
+          setcurrentData(newData);
+          setStatus("data");
+        } catch (error) {
+          setStatus("error");
+          setError(error);
+        }
+        setLoading(false);
+        break;
       }
     }
-  }, [category, type]);
-
-  return { status, loading, error, data };
+  };
+  return { fxn, status, loading, error, currentData };
 };
 
 export default useNetworkRequest;
