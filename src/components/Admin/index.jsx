@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import Project  from "./Project.js";
+import Project from "./Project.js";
 import Education from "./Education";
+import Work from "./Work";
 
 const Admin = () => {
-  const [data, setData] = useState([]);
+  const [tab, setTab] = useState("");
+
+  const renderTab = () => {
+    switch(tab) {
+      case "Education": return <Education/>;
+      case "Project": return <Project />;
+      case "Work": return <Work/>;
+      default: return <Education/>
+    }
+  }
   return (
     <div>
       {/* <header id="top-bar" className="navbar-fixed-top animated-header">
@@ -56,8 +66,18 @@ const Admin = () => {
           </nav>
         </div>
       </header> */}
-      <Project />
-      {/* <Education /> */}
+      <ul>
+        <li>
+          <a onClick={() => setTab("Education")}>Eduaction</a>
+        </li>
+        <li>
+          <a onClick={() => setTab("Work")}>Work Experience</a>
+        </li>
+        <li>
+          <a onClick={() => setTab("Project")}>Projects</a>
+        </li>
+      </ul>
+      {renderTab()}
     </div>
   );
 };

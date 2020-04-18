@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { withLogging } from "../HOC/withLogging.jsx";
 import withRequest from "../HOC/withRequest.js";
 
-const Project = ({
+const Work = ({
   status,
   error,
   loading,
@@ -12,68 +11,70 @@ const Project = ({
   handleUpdate,
   imageView
 }) => {
-  const [projectName, setProjectName] = useState("");
-  const [subtitle, setSubtitle] = useState("");
-  const [technologies, setTechnologies] = useState([]);
+  const [companyName, setCompanyName] = useState("");
+  const [responsibilities, setResponsibilities] = useState([]);
+  const [designation, setDesignation] = useState("");
+
+  const newValues = {
+    companyName,
+    responsibilities,
+    designation
+  };
 
   const onAdd = () => {
-    const newArray = [...technologies, " "];
-    setTechnologies(newArray);
+    const newArray = [...responsibilities, " "];
+    setResponsibilities(newArray);
   };
 
   const onDelete = index => {
     const newArray = [
-      ...technologies.slice(0, index),
-      ...technologies.slice(index + 1)
+      ...responsibilities.slice(0, index),
+      ...responsibilities.slice(index + 1)
     ];
-    setTechnologies(newArray);
+    setResponsibilities(newArray);
   };
 
   const handleChange = (index, value) => {
-    const newArray = technologies.slice(0);
+    const newArray = responsibilities.slice(0);
     newArray[index] = value;
-    setTechnologies(newArray);
+    setResponsibilities(newArray);
   };
 
-  const newValues = {
-    projectName,
-    subtitle,
-    technologies
-  };
-
-  const renderUI = projects => {
+  const renderUI = works => {
     return (
       <>
         <table style={styles.table}>
           <thead>
             <tr>
-              <th style={styles.tableData}>Project Name</th>
-              <th style={styles.tableData}>Subtitles</th>
-              <th style={styles.tableData}>Technologies</th>
-              <th style={styles.tableData}>Project Image</th>
+              <th style={styles.tableData}>Company Name</th>
+              <th style={styles.tableData}>Designation</th>
+              <th style={styles.tableData}>Responsibilities</th>
+              <th style={styles.tableData}>Company Image</th>
               <th style={styles.tableData}>Options</th>
             </tr>
           </thead>
           <tbody>
-            {projects && projects.length ? (
-              projects.map(project => {
+            {works && works.length ? (
+              works.map(work => {
                 return (
-                  <tr key={project._id}>
-                    <td style={styles.tableData}>{project.projectName}</td>
-                    <td style={styles.tableData}>{project.subtitle}</td>
+                  <tr key={work._id}>
+                    <td style={styles.tableData}>{work.companyName}</td>
+                    <td style={styles.tableData}>{work.designation}</td>
                     <td style={styles.tableData}>
                       <ol>
-                        {project.technologies
-                          ? project.technologies.map((technology, index) => {
-                              return <li key={index}>{technology}</li>;
-                            })
+                        {work.responsibilities
+                          ? work.responsibilities.map(
+                              (responsibilty, index) => {
+                                return <li key={index}>{responsibilty}</li>;
+                              }
+                            )
                           : "N/A"}
                       </ol>
                     </td>
-                    {project.projectImage ? (
+                    {work.workImage ? (
                       <td style={styles.tableData}>
                         <img
-                          src={project.projectImage}
+                          src={work.workImage}
                           height="100px"
                           width="100px"
                         />
@@ -84,7 +85,7 @@ const Project = ({
                     <td style={styles.tableData}>
                       <button
                         onClick={() => {
-                          handleDelete(project._id);
+                          handleDelete(work._id);
                         }}
                       >
                         Delete Project
@@ -102,27 +103,20 @@ const Project = ({
         </table>
         <form>
           <div style={styles.form}>
-            Project Name:
+            Company Name:
             <input
-              name="projectName"
-              value={projectName}
-              onChange={e => setProjectName(e.target.value)}
+              name="companyName"
+              value={companyName}
+              onChange={e => setCompanyName(e.target.value)}
               required
             />
-            Subititles:
-            <input
-              name="subtitle"
-              value={subtitle}
-              onChange={e => setSubtitle(e.target.value)}
-              required
-            />
-            Technologies:
-            {technologies.map((technology, index) => {
+            Responsibilities:
+            {responsibilities.map((responsibilty, index) => {
               return (
                 <div key={index}>
                   <input
-                    name={technology}
-                    value={technology}
+                    name={responsibilty}
+                    value={responsibilty}
                     onChange={e => handleChange(index, e.target.value)}
                   />
                   <span onClick={() => onDelete(index)}>x</span>
@@ -132,12 +126,20 @@ const Project = ({
             <button type="button" onClick={() => onAdd()}>
               Add
             </button>
-            Project Image :{imageView}
+            Designation:
+            <input
+              name="designation"
+              value={designation}
+              onChange={e => setDesignation(e.target.value)}
+              required
+            />
+            Work Image :{imageView}
             <button type="button" onClick={() => handleAdd(newValues)}>
               Submit
             </button>
           </div>
         </form>
+        <button onClick={() => handleAdd()}>ADD Education</button>
       </>
     );
   };
@@ -150,14 +152,6 @@ const Project = ({
     case "data":
       return renderUI(data);
   }
-
-  // const clearForms = () => {
-  //   setProjectName("");
-  //   setSubtitle("");
-  //   setTechnologies([]);
-  //   setImageUrl("");
-  //   childRef.current.clearImage();
-  // };
 };
 
 const styles = {
@@ -178,4 +172,4 @@ const styles = {
   }
 };
 
-export default withRequest(withLogging(Project), "project");
+export default withRequest(Work, "work");

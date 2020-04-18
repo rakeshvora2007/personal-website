@@ -4,8 +4,9 @@ import imageUploader from "../../utils/imageUploader";
 import { ImageViewer } from "../../utils/ImageViewer.jsx";
 
 const withRequest = (WrappedComponent, category) => props => {
-  // const { status, loading, error, data } = useNetworkRequest(category, "GET");
-  const {fxn, status, loading, error, currentData } = useNetworkRequest(category);
+  const { fxn, status, loading, error, currentData } = useNetworkRequest(
+    category
+  );
   const [imageUrl, setImageUrl] = useState();
   const childRef = useRef();
 
@@ -13,15 +14,11 @@ const withRequest = (WrappedComponent, category) => props => {
     setImageUrl(url);
   };
 
-
   const handleAdd = async data => {
-      console.log("handle add");
+    console.log("handle add");
     let firebaseUrl = await imageUploader(imageUrl);
-    data["projectImage"] = firebaseUrl;
+    data[`${category}Image`] = firebaseUrl;
     fxn("ADD", data);
-/* 
-    .then(async firebaseUrl => {
-    }); */
   };
 
   const handleDelete = id => {
@@ -34,20 +31,15 @@ const withRequest = (WrappedComponent, category) => props => {
     fxn("UPDATE", data);
   };
 
-/*   useEffect(() => {
-    console.log("with Request loaded... DATA ONLY");
-    console.log(data)
-  }, [data]); */
-
   useEffect(() => {
     console.log("with Request loaded... NEW DATA");
-    console.log(currentData)
+    console.log(currentData);
   }, [currentData]);
 
   return (
     <WrappedComponent
       {...props}
-      status={status }
+      status={status}
       loading={loading}
       error={error}
       data={currentData}

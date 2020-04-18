@@ -16,7 +16,7 @@ const useNetworkRequest = category => {
   const [status, setStatus] = useState("loading");
 
   useEffect(() => {
-    const fetchData = (async () => {
+    (async () => {
       setStatus("loading");
       setLoading(true);
       try {
