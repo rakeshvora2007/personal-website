@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import withRequest from "../HOC/withRequest.js";
 
+import { Loading } from "./Loading";
+import { Error } from "./Error";
+
 const Education = ({
   status,
   error,
@@ -154,9 +157,9 @@ const Education = ({
 
   switch (status) {
     case "loading":
-      return <div>Loading...</div>;
+      return <Loading />;
     case "error":
-      console.log(error);
+      return <Error />;
     case "data":
       return renderUI(data);
   }
