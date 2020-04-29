@@ -34,7 +34,7 @@ const Education = ({
   };
 
   const onAdd = () => {
-    const newArray = [...courseWorks, " "];
+    const newArray = [...courseWorks, ""];
     setCourseWorks(newArray);
   };
 
@@ -103,7 +103,7 @@ const Education = ({
                           handleDelete(education._id);
                         }}
                       >
-                        Delete Project
+                        Delete Education
                       </button>
                     </td>
                   </tr>
@@ -111,7 +111,7 @@ const Education = ({
               })
             ) : (
               <tr>
-                <td>No Projects</td>
+                <td>No Education</td>
               </tr>
             )}
           </tbody>
