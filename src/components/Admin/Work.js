@@ -31,7 +31,7 @@ const Work = ({
   };
 
   const onAdd = () => {
-    const newArray = [...responsibilities, " "];
+    const newArray = [...responsibilities, ""];
     setResponsibilities(newArray);
   };
 
@@ -97,7 +97,7 @@ const Work = ({
                           handleDelete(work._id);
                         }}
                       >
-                        Delete Project
+                        Delete WorkEx
                       </button>
                     </td>
                   </tr>
@@ -105,7 +105,7 @@ const Work = ({
               })
             ) : (
               <tr>
-                <td>No Projects</td>
+                <td>No Work Experience</td>
               </tr>
             )}
           </tbody>
@@ -117,6 +117,13 @@ const Work = ({
               name="companyName"
               value={companyName}
               onChange={e => setCompanyName(e.target.value)}
+              required
+            />
+            Designation:
+            <input
+              name="designation"
+              value={designation}
+              onChange={e => setDesignation(e.target.value)}
               required
             />
             Responsibilities:
@@ -135,13 +142,6 @@ const Work = ({
             <button type="button" onClick={() => onAdd()}>
               Add
             </button>
-            Designation:
-            <input
-              name="designation"
-              value={designation}
-              onChange={e => setDesignation(e.target.value)}
-              required
-            />
             Work Image :{imageView}
             <button
               type="button"
@@ -154,7 +154,6 @@ const Work = ({
             </button>
           </div>
         </form>
-        <button onClick={() => handleAdd()}>ADD Education</button>
       </>
     );
   };
