@@ -19,6 +19,7 @@ const withRequest = (WrappedComponent, category) => props => {
     let firebaseUrl = await imageUploader(imageUrl);
     data[`${category}Image`] = firebaseUrl;
     fxn("ADD", data);
+    setImageUrl("");
   };
 
   const handleDelete = id => {

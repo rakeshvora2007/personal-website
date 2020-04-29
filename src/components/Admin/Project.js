@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { withLogging } from "../HOC/withLogging.jsx";
 import withRequest from "../HOC/withRequest.js";
 
+import { Loading } from "./Loading";
+import { Error } from "./Error";
+
 const Project = ({
   status,
   error,
@@ -33,6 +36,12 @@ const Project = ({
     const newArray = technologies.slice(0);
     newArray[index] = value;
     setTechnologies(newArray);
+  };
+
+  const clearForms = () => {
+    setProjectName("");
+    setSubtitle("");
+    setTechnologies([]);
   };
 
   const newValues = {
@@ -133,7 +142,13 @@ const Project = ({
               Add
             </button>
             Project Image :{imageView}
-            <button type="button" onClick={() => handleAdd(newValues)}>
+            <button
+              type="button"
+              onClick={() => {
+                handleAdd(newValues);
+                clearForms();
+              }}
+            >
               Submit
             </button>
           </div>
@@ -144,20 +159,12 @@ const Project = ({
 
   switch (status) {
     case "loading":
-      return <div>Loading...</div>;
+      return <Loading />;
     case "error":
       console.log(error);
     case "data":
       return renderUI(data);
   }
-
-  // const clearForms = () => {
-  //   setProjectName("");
-  //   setSubtitle("");
-  //   setTechnologies([]);
-  //   setImageUrl("");
-  //   childRef.current.clearImage();
-  // };
 };
 
 const styles = {

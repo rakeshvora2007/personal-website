@@ -26,6 +26,13 @@ const Education = ({
     percentage
   };
 
+  const clearForms = () => {
+    setName("");
+    setGPA("");
+    setPercentage("");
+    setCourseWorks([]);
+  };
+
   const onAdd = () => {
     const newArray = [...courseWorks, " "];
     setCourseWorks(newArray);
@@ -48,6 +55,9 @@ const Education = ({
   const renderUI = educations => {
     return (
       <>
+      <header>
+        EDUCATION
+      </header>
         <table style={styles.table}>
           <thead>
             <tr>
@@ -146,7 +156,7 @@ const Education = ({
               required
             />
             Project Image :{imageView}
-            <button type="button" onClick={() => handleAdd(newValues)}>
+            <button type="button" onClick={() => { handleAdd(newValues); clearForms()}}>
               Submit
             </button>
           </div>

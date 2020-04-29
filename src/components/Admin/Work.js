@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import withRequest from "../HOC/withRequest.js";
 
+import { Loading } from "./Loading";
+import { Error } from "./Error";
+
 const Work = ({
   status,
   error,
@@ -19,6 +22,12 @@ const Work = ({
     companyName,
     responsibilities,
     designation
+  };
+
+  const clearForms = () => {
+    setCompanyName("");
+    setDesignation("");
+    setResponsibilities([]);
   };
 
   const onAdd = () => {
@@ -134,7 +143,13 @@ const Work = ({
               required
             />
             Work Image :{imageView}
-            <button type="button" onClick={() => handleAdd(newValues)}>
+            <button
+              type="button"
+              onClick={() => {
+                handleAdd(newValues);
+                clearForms();
+              }}
+            >
               Submit
             </button>
           </div>
@@ -146,7 +161,7 @@ const Work = ({
 
   switch (status) {
     case "loading":
-      return <div>Loading...</div>;
+      return <Loading />;
     case "error":
       console.log(error);
     case "data":
