@@ -18,9 +18,11 @@ const Project = ({
   const [projectName, setProjectName] = useState("");
   const [subtitle, setSubtitle] = useState("");
   const [technologies, setTechnologies] = useState([]);
+  const [repoLink, setRepoLink] = useState("");
+  const [demoLink, setDemoLink] = useState("");
 
   const onAdd = () => {
-    const newArray = [...technologies, " "];
+    const newArray = [...technologies, ""];
     setTechnologies(newArray);
   };
 
@@ -42,12 +44,16 @@ const Project = ({
     setProjectName("");
     setSubtitle("");
     setTechnologies([]);
+    setDemoLink("");
+    setRepoLink("");
   };
 
   const newValues = {
     projectName,
     subtitle,
-    technologies
+    technologies,
+    repoLink,
+    demoLink
   };
 
   const renderUI = projects => {
@@ -60,6 +66,8 @@ const Project = ({
               <th style={styles.tableData}>Subtitles</th>
               <th style={styles.tableData}>Technologies</th>
               <th style={styles.tableData}>Project Image</th>
+              <th style={styles.tableData}>Repository Link</th>
+              <th style={styles.tableData}>Demo Link</th>
               <th style={styles.tableData}>Options</th>
             </tr>
           </thead>
@@ -72,11 +80,13 @@ const Project = ({
                     <td style={styles.tableData}>{project.subtitle}</td>
                     <td style={styles.tableData}>
                       <ol>
-                        {project.technologies
-                          ? project.technologies.map((technology, index) => {
-                              return <li key={index}>{technology}</li>;
-                            })
-                          : "N/A"}
+                        {project.technologies ? (
+                          project.technologies.map((technology, index) => {
+                            return <li key={index}>{technology}</li>;
+                          })
+                        ) : (
+                          <td>N/A</td>
+                        )}
                       </ol>
                     </td>
                     {project.projectImage ? (
@@ -88,7 +98,25 @@ const Project = ({
                         />
                       </td>
                     ) : (
-                      "N/A"
+                      <td>N/A</td>
+                    )}
+                    {project.repoLink ? (
+                      <td style={styles.tableData}>
+                        <a target="_blank" href={project.repoLink}>
+                          {project.repoLink}
+                        </a>
+                      </td>
+                    ) : (
+                      <td>N/A</td>
+                    )}
+                    {project.demoLink ? (
+                      <td style={styles.tableData}>
+                        <a target="_blank" href={project.demoLink}>
+                          {project.demoLink}
+                        </a>
+                      </td>
+                    ) : (
+                      <td>N/A</td>
                     )}
                     <td style={styles.tableData}>
                       <button
@@ -141,6 +169,20 @@ const Project = ({
             <button type="button" onClick={() => onAdd()}>
               Add
             </button>
+            Repository Link:
+            <input
+              name="repoLink"
+              value={repoLink}
+              onChange={e => setRepoLink(e.target.value)}
+              required
+            />
+            Demo Link:
+            <input
+              name="demoLink"
+              value={demoLink}
+              onChange={e => setDemoLink(e.target.value)}
+              required
+            />
             Project Image :{imageView}
             <button
               type="button"

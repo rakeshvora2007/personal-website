@@ -55,9 +55,7 @@ const Education = ({
   const renderUI = educations => {
     return (
       <>
-      <header>
-        EDUCATION
-      </header>
+        <header>EDUCATION</header>
         <table style={styles.table}>
           <thead>
             <tr>
@@ -79,11 +77,13 @@ const Education = ({
                     </td>
                     <td style={styles.tableData}>
                       <ol>
-                        {education.courseWork
-                          ? education.courseWork.map((course, index) => {
-                              return <li key={index}>{course}</li>;
-                            })
-                          : "N/A"}
+                        {education.courseWork ? (
+                          education.courseWork.map((course, index) => {
+                            return <li key={index}>{course}</li>;
+                          })
+                        ) : (
+                          <td>N/A</td>
+                        )}
                       </ol>
                     </td>
                     {education.educationImage ? (
@@ -95,7 +95,7 @@ const Education = ({
                         />
                       </td>
                     ) : (
-                      "N/A"
+                      <td>N/A</td>
                     )}
                     <td style={styles.tableData}>
                       <button
@@ -156,7 +156,13 @@ const Education = ({
               required
             />
             Project Image :{imageView}
-            <button type="button" onClick={() => { handleAdd(newValues); clearForms()}}>
+            <button
+              type="button"
+              onClick={() => {
+                handleAdd(newValues);
+                clearForms();
+              }}
+            >
               Submit
             </button>
           </div>

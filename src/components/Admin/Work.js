@@ -71,13 +71,13 @@ const Work = ({
                     <td style={styles.tableData}>{work.designation}</td>
                     <td style={styles.tableData}>
                       <ol>
-                        {work.responsibilities
-                          ? work.responsibilities.map(
-                              (responsibilty, index) => {
-                                return <li key={index}>{responsibilty}</li>;
-                              }
-                            )
-                          : "N/A"}
+                        {work.responsibilities ? (
+                          work.responsibilities.map((responsibilty, index) => {
+                            return <li key={index}>{responsibilty}</li>;
+                          })
+                        ) : (
+                          <td>N/A</td>
+                        )}
                       </ol>
                     </td>
                     {work.workImage ? (
@@ -89,7 +89,7 @@ const Work = ({
                         />
                       </td>
                     ) : (
-                      "N/A"
+                      <td>N/A</td>
                     )}
                     <td style={styles.tableData}>
                       <button
