@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 
+import { Loading } from "../../Reusables/Loading.jsx";
+
 const Projects = () => {
   const [data, setData] = useState([]);
 
@@ -11,6 +13,10 @@ const Projects = () => {
         setData(data.data.reverse());
       });
   }, []);
+
+  if(!data.length) {
+    return <Loading />;
+  }
 
   return (
     <section className="works service-page">

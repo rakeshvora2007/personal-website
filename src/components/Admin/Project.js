@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { withLogging } from "../HOC/withLogging.jsx";
 import withRequest from "../HOC/withRequest.js";
 
-import { Loading } from "./Loading";
+import { Loading } from "../Reusables/Loading.jsx";
 import { Error } from "./Error";
 
 const Project = ({

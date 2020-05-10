@@ -14,6 +14,10 @@ const WorkEx = () => {
       });
   }, []);
 
+  if(!data.length) {
+    return <Loading />;
+  }
+
   return (
     <section className="company-description">
       <div className="container">

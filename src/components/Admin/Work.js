@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import withRequest from "../HOC/withRequest.js";
 
-import { Loading } from "./Loading";
+import { Loading } from "../Reusables/Loading.jsx";
 import { Error } from "./Error";
 
 const Work = ({
