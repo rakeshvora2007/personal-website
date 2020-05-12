@@ -52,6 +52,11 @@ const Work = ({
   const renderUI = works => {
     return (
       <>
+      <header>
+          <div className="container clearfix">
+            <h1 id="logo">WORK EXPERIENCE</h1>
+          </div>
+        </header>
         <table style={styles.table}>
           <thead>
             <tr>

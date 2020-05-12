@@ -59,6 +59,11 @@ const Project = ({
   const renderUI = projects => {
     return (
       <>
+      <header>
+          <div className="container clearfix">
+            <h1 id="logo">PROJECT</h1>
+          </div>
+        </header>
         <table style={styles.table}>
           <thead>
             <tr>

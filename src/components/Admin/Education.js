@@ -55,7 +55,11 @@ const Education = ({
   const renderUI = educations => {
     return (
       <>
-        <header>EDUCATION</header>
+        <header>
+          <div className="container clearfix">
+            <h1 id="logo">EDUCATION</h1>
+          </div>
+        </header>
         <table style={styles.table}>
           <thead>
             <tr>
