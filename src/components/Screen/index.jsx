@@ -8,6 +8,11 @@ const Screen = () => {
 
   useEffect(() => {
     if (window) {
+      if (window.sessionStorage.getItem("token")) {
+        setAuth(true);
+      } else {
+        setAuth(false);
+      }
       window.addEventListener("keydown", loginListener);
     }
     return () => {

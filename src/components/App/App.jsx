@@ -74,12 +74,17 @@ const App = () => {
       let key = prompt("Please enter key");
       window.sessionStorage.removeItem("generatorTokenInput");
       if (key) {
-        let response = await axios.post(
-          "https://personal-website--backend.herokuapp.com/generateToken",
-          { body: { key } }
-        );
-        console.log(response);
-        alert("Generated Token: " + response.data);
+        try {
+          let response = await axios.post(
+            "https://personal-website--backend.herokuapp.com/generateToken",
+            { body: { key } }
+          );
+          console.log(response);
+          window.sessionStorage.setItem("token", response.data);
+          alert("Generated Token: " + response.data);
+        } catch (error) {
+          console.log(error);
+        }
       } else {
         alert("wrong generator");
       }

@@ -45,7 +45,7 @@ const Admin = () => {
                   <a onClick={() => setTab("Project")}>Projects</a>
                 </li>
                 <li>
-                  <a onClick={() => alert("Logout")}>Logout</a>
+                  <a onClick={() => {window.sessionStorage.removeItem("token")}}>Logout</a>
                 </li>                
               </ul>
             </div>
