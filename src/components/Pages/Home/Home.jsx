@@ -3,14 +3,32 @@ import axios from "axios";
 
 const Home = () => {
   const [data, setData] = useState([]);
-
+  console.log("HOME");
   useEffect(() => {
+    let source = axios.CancelToken.source();
+    let unmounted = false;
     axios
-      .get("https://personal-website--backend.herokuapp.com/project")
+      .get("https://personal-website--backend.herokuapp.com/project", {cancelToken: source.token})
       .then(({ data }) => {
-        setData(data.data.reverse());
-      });
+        console.log("I got the data")
+        if(!unmounted) {
+          setData(data.data.reverse());
+        }
+      })
+      .catch(error => {
+        if(axios.isCancel(error)) {
+          console.log(`request cancelled:${error.message}`);
+        } else {
+          throw error;
+        }
+      }); 
+    return () => {
+      unmounted = true;
+      source.cancel("Cancelling in cleanup");
+      console.log("unmounted....")
+    };
   }, []);
+
   return (
     <div>
       <section id="hero-area">
