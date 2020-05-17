@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Headliner from "../../Headliner/Headliner.jsx";
 
 import {Loading} from "../../Reusables/Loading.jsx";
 
@@ -19,6 +20,8 @@ const Education = () => {
   }
 
   return (
+    <>
+    <Headliner headline="Education" quote="The knowledge of tiny island"/>
     <section className="company-description">
       <div className="container">
         <div className="education">
@@ -74,6 +77,7 @@ const Education = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

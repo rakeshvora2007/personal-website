@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import Headliner from "../../Headliner/Headliner.jsx";
+
 
 import { Loading } from "../../Reusables/Loading.jsx";
 
@@ -19,6 +21,8 @@ const Projects = () => {
   }
 
   return (
+    <>
+    <Headliner headline="Projects" quote="It's not who you are underneath, It's what you do that defines you."/>
     <section className="works service-page">
       <div className="container">
         <h2
@@ -81,6 +85,7 @@ const Projects = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

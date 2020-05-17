@@ -1,4 +1,6 @@
-import firebase from "firebase";
+import firebase from 'firebase/app';
+import 'firebase/storage';  // If using Firebase storage
+
 const firebaseConfig = {
     apiKey: "AIzaSyAwwuCgn4uWGwXpbkTEN1zLC1KPk_bYTpk",
     authDomain: "personal-website-f8d5d.firebaseapp.com",
@@ -11,6 +13,5 @@ const firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
 
   export default firebase;

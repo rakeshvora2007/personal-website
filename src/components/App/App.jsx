@@ -5,7 +5,6 @@ import Footer from "../Footer/Footer.jsx";
 
 const App = () => {
   const [page, setPage] = useState();
-  console.log("APP RUN")
 
   return (
     <div style={{ position: "relative" }}>
