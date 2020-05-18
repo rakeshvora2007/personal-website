@@ -12,7 +12,7 @@ const Navbar = (props) => {
                     <span className="icon-bar"></span>
                 </button>
                 <div className="navbar-brand">
-                    <a href="index.html"><img src="images/logo.png" alt=""/></a>
+                    <a href="index.html"><img style={{height: "110px", width: "118px"}} src="images/logo.png" alt=""/></a>
                 </div>
             </div>
             <nav className="collapse navbar-collapse navbar-right" role="navigation">
