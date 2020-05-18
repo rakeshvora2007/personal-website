@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   }
 });
 
-const Cards = () => {
+const Cards = ({name, image}) => {
   const classes = useStyles();
   return (
     <div>
@@ -25,12 +25,12 @@ const Cards = () => {
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image="https://via.placeholder.com/150"
+            image={image}
             title="Contemplative Reptile"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              Lizard
+              {name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               Lizards are a widespread group of squamate reptiles, with over
@@ -40,10 +40,10 @@ const Cards = () => {
         </CardActionArea>
         <CardActions>
           <Button size="small" color="primary">
-            Share
+            Demo
           </Button>
           <Button size="small" color="primary">
-            Learn More
+            Code
           </Button>
         </CardActions>
       </Card>
