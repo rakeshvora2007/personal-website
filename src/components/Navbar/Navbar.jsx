@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import logo from "../../images/logo.png"
 
 const Navbar = (props) => {
     return (
@@ -12,7 +13,7 @@ const Navbar = (props) => {
                     <span className="icon-bar"></span>
                 </button>
                 <div className="navbar-brand">
-                    <a href="index.html"><img src="images/logo.png" alt=""/></a>
+                    <a href="index.html"><img src={logo} alt="Logo"/></a>
                 </div>
             </div>
             <nav className="collapse navbar-collapse navbar-right" role="navigation">

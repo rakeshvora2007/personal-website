@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import about from "../../../images/about.jpg";
+
 const Home = () => {
   const [data, setData] = useState([]);
   console.log("HOME");
@@ -92,7 +94,7 @@ const Home = () => {
                 data-wow-delay=".3s"
                 data-wow-duration="500ms"
               >
-                <img src="images/about/about.jpg" alt="" />
+                <img src={about} alt="about" />
               </div>
             </div>
           </div>

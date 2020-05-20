@@ -67,14 +67,12 @@ const Projects = () => {
                         <div className="overlay">
                           <div className="buttons">
                             <a
-                              rel="gallery"
-                              className="fancybox"
                               href={project.demoLink}
                             >
                               Demo
                             </a>
                             <a target="_blank" href="">
-                              Details
+                              Code
                             </a>
                           </div>
                         </div>
