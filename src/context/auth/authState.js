@@ -12,12 +12,11 @@ const AuthState = ({ children }) => {
     isAuthenticated: false
   };
   const [state, dispatch] = useReducer(AuthReducer, initialState);
-  const baseUrl = process.env.REACT_APP_HOSTED_URL || "http://localhost:5000";
 
   const setToken = async key => {
     try {
       let response = await axios.post(
-        `${baseUrl}/generateToken`,
+        `https://personal-website--backend.herokuapp.com/generateToken`,
         { body: { key } }
       );
       dispatch({
