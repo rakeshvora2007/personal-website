@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect, useContext } from "react";
 
 import App from "../App/App.jsx";
 import Admin from "../Admin/index.jsx";
 
 import { Loading } from "../Reusables/Loading.jsx";
 
+import AuthContext from "../../context/auth/authContext";
+
 const Screen = () => {
   const [auth, setAuth] = useState(false);
   const [loading, setLoading] = useState(true);
+
+  const {setToken} = useContext(AuthContext);
 
   useEffect(() => {
     setLoading(true);
@@ -141,11 +144,7 @@ const Screen = () => {
       window.sessionStorage.removeItem("generatorTokenInput");
       if (key) {
         try {
-          let response = await axios.post(
-            "https://personal-website--backend.herokuapp.com/generateToken",
-            { body: { key } }
-          );
-          window.sessionStorage.setItem("token", response.data);
+          setToken(key);
         } catch (error) {
           console.log(error);
         }
