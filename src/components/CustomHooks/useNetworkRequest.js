@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
-/* import {
-  getRequest,
-  addRequest,
-  deleteRequest,
-  updateRequest
-} from "../Admin/RequestAssociation"; */
+axios.defaults.headers.common["Authorization"] =
+  "Bearer " + sessionStorage.getItem("token");
 
 const useNetworkRequest = category => {
   let url = `https://personal-website--backend.herokuapp.com/${category}`;
@@ -34,6 +29,7 @@ const useNetworkRequest = category => {
   const fxn = async (type, requestData, _id) => {
     setStatus("loading");
     setLoading(true);
+    let token = window.sessionStorage.getItem("token");
     switch (type) {
       case "ADD": {
         try {
