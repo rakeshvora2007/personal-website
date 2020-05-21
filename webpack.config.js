@@ -1,17 +1,29 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const CopyWebpackPlugin = require("copy-webpack-plugin");
+// const autoprefixer = require("autoprefixer");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    index: "./src/index.js"
+  },
   output: {
-    path: path.join(__dirname, "/build"),
-    filename: "bundle.js"
+    path: path.join(__dirname, "dist"),
+    filename: "[name].bundle.js"
   },
   devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    historyApiFallback: true,
+    compress: true,
     inline: true,
     port: 8080
   },
+  // resolve: {
+  //   alias: {
+  //     jquery: "jquery/src/jquery"
+  //   }
+  // },
   module: {
     rules: [
       {
@@ -26,7 +38,11 @@ module.exports = {
             loader: "style-loader"
           },
           {
-            loader: "css-loader"
+            loader: "css-loader",
+            options: {
+              sourceMap: true
+              // outputPath: "dist/"
+            }
           }
         ]
       },
@@ -39,16 +55,19 @@ module.exports = {
           },
           {
             // Interprets `@import` and `url()` like `import/require()` and will resolve them
-            loader: "css-loader"
+            loader: "css-loader",
+            options: {
+              sourceMap: true
+              // outputPath: "dist/"
+            }
           },
           {
             // Loader for webpack to process CSS with PostCSS
             loader: "postcss-loader",
             options: {
-              plugins: function() {
-                return [require("autoprefixer")];
-              }
+              plugins: [require("autoprefixer")]
             }
+            // outputPath: "dist/"
           },
           {
             // Loads a SASS/SCSS file and compiles it to CSS
@@ -57,24 +76,49 @@ module.exports = {
         ]
       },
       {
+        test: /\.html$/,
+        use: ["html-loader"]
+      },
+      {
         test: /\.(png|svg|jpg|gif)$/,
         use: ["file-loader"]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: ["file-loader"]
-      },
+      }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: __dirname + "/index.html",
-      filename: __dirname + "/build/index.html",
+      filename: __dirname + "/dist/index.html",
       inject: "body"
     }),
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery"
+      "window.jQuery": "jquery",
+      "window.$": "jquery",
+      jQuery: "jquery",
+      $: "jquery"
     })
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: path.join(
+    //         __dirname,
+    //         "node_modules",
+    //         "bootstrap",
+    //         "dist",
+    //         "css",
+    //         "bootstrap.min.css"
+    //       ),
+    //       to: "css"
+    //     },
+    //     {
+    //       from: path.join(__dirname, "src", "fonts"),
+    //       to: "fonts"
+    //     }
+    //   ]
+    // })
   ]
 };

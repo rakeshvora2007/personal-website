@@ -3,9 +3,9 @@ import logo from "../../images/logo.png"
 
 const Navbar = (props) => {
     return (
-    <header id="top-bar" className="navbar-fixed-top animated-header">
+    <header id="top-bar" className="fixed-top animated-header">
     <div className="container">
-    <nav className="navbar  navbar-light navbar-expand-lg bg-faded ">
+    <nav className="navbar navbar-light navbar-expand-lg bg-faded ">
 
         <div className="navbar-brand">
             <a href="index.html"><img src={logo} alt="Logo"/></a>

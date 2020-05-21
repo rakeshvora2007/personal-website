@@ -57,6 +57,7 @@ const Projects = () => {
                       <Cards
                         image={project.projectImage}
                         name={project.projectName}
+                        subtitle={project.subtitle}
                       />
                       <div className="img-wrapper">
                         <img

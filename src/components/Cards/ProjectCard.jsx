@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   }
 });
 
-const Cards = ({name, image}) => {
+const Cards = ({name, image, subtitle}) => {
   const classes = useStyles();
   return (
     <div>
@@ -33,8 +33,7 @@ const Cards = ({name, image}) => {
               {name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
+              {subtitle}
             </Typography>
           </CardContent>
         </CardActionArea>
