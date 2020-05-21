@@ -47,6 +47,7 @@ const Projects = () => {
             </p>
             <div className="row">
               {data.map((project, index) => {
+                {console.log(project)}
                 return (
                   <div key={index} className="col-sm-3">
                     <figure
@@ -54,25 +55,26 @@ const Projects = () => {
                       data-wow-duration="500ms"
                       data-wow-delay="0ms"
                     >
-                      <Cards
+                      {/* <Cards
                         image={project.projectImage}
                         name={project.projectName}
                         subtitle={project.subtitle}
-                      />
+                      /> */}
                       <div className="img-wrapper">
                         <img
                           src={project.projectImage}
-                          className="img-responsive"
+                          className="img-fluid"
                           alt="this is a title"
                         />
                         <div className="overlay">
                           <div className="buttons">
                             <a
+                              target="_blank"
                               href={project.demoLink}
                             >
                               Demo
                             </a>
-                            <a target="_blank" href="">
+                            <a target="_blank" href={project.repoLink}>
                               Code
                             </a>
                           </div>

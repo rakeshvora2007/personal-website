@@ -1,8 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700);
-@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+@import url(
+  https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700
+);
+@import url(
+  https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700
+);
 @import url(https://fonts.googleapis.com/css?family=Glegoo);
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 h1,
 h2,
@@ -10,10 +14,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 p {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 22px;
   font-size: 16px;
   font-weight: 300;
@@ -84,7 +88,7 @@ a:hover {
   margin-top: 8px;
 }
 
-.nav.navbar-nav.navbar-right a{
+.nav-link {
   cursor: pointer;
 }
 .navbar-inverse .navbar-toggle:focus,
@@ -119,9 +123,9 @@ a:hover {
   font-size: 14px;
   font-weight: 500;
   border-bottom: 2px solid transparent;
-  -webkit-transition: .3s all;
-  -o-transition: .3s all;
-  transition: .3s all;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
   text-transform: uppercase;
 }
 #top-bar .main-menu li a:hover {
@@ -151,7 +155,7 @@ a:hover {
   position: relative;
 }
 #hero-area:before {
-  content: '';
+  content: "";
   z-index: 9;
   background: rgba(255, 255, 255, 0.78);
   position: absolute;
@@ -179,7 +183,7 @@ a:hover {
   line-height: 27px;
   text-transform: uppercase;
   color: #666;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin-top: 25px;
 }
 #hero-area .btn {
@@ -216,7 +220,7 @@ a:hover {
 #call-to-action .block p {
   font-size: 15px;
   font-weight: 300;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin-top: 20px;
 }
 #call-to-action .block .btn-contact {
@@ -256,7 +260,7 @@ a:hover {
 }
 .works {
   padding: 80px 0;
-  background: #FCFCFC;
+  background: #fcfcfc;
 }
 .works .block {
   position: relative;
@@ -285,9 +289,9 @@ a:hover {
   left: 0;
   bottom: 0;
   opacity: 0;
-  -webkit-transition: .3s all;
-  -o-transition: .3s all;
-  transition: .3s all;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
 }
 .works .block .img-overly .overly a {
   position: absolute;
@@ -299,7 +303,7 @@ a:hover {
   color: #fff;
 }
 .education > .row {
-    margin-bottom: 10em;
+  margin-bottom: 10em;
 }
 figure {
   background: #fff;
@@ -363,9 +367,11 @@ figure .overlay:hover a {
 }
 figure .buttons {
   position: absolute;
-  top: 45%;
-  left: 24%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
+
 figure figcaption {
   padding: 20px 25px;
   margin-top: 0;
@@ -419,7 +425,32 @@ figure figcaption p {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  text-shadow: #00a4ba 1px 1px, #00a4ba 2px 2px, #00a4ba 3px 3px, #00a4ba 4px 4px, #00a4ba 5px 5px, #00a4ba 6px 6px, #00a4ba 7px 7px, #00a4ba 8px 8px, #00a4ba 9px 9px, #00a4ba 10px 10px, #00a4ba 11px 11px, #00a4ba 12px 12px, #00a4ba 13px 13px, #00a4ba 14px 14px, #00a4ba 15px 15px, #00a4ba 16px 16px, #00a4ba 17px 17px, #00a4ba 18px 18px, #00a4ba 19px 19px, #00a4ba 20px 20px, #00a4ba 21px 21px, #00a4ba 22px 22px, #00a4ba 23px 23px, #00a4ba 24px 24px, #00a4ba 25px 25px, #00a4ba 26px 26px, #00a4ba 27px 27px, #00a4ba 28px 28px, #00a4ba 29px 29px, #00a4ba 30px 30px, #00a4ba 31px 31px, #00a4ba 32px 32px, #00a4ba 33px 33px, #00a4ba 34px 34px, #00a4ba 35px 35px, #00a4ba 36px 36px, #00a4ba 37px 37px, #00a4ba 38px 38px, #00a4ba 39px 39px, #00a4ba 40px 40px, #00a4ba 41px 41px, #00a4ba 42px 42px, #00a4ba 43px 43px, #00a4ba 44px 44px, #00a4ba 45px 45px, #00a4ba 46px 46px, #00a4ba 47px 47px, #00a4ba 48px 48px, #00a4ba 49px 49px, #00a4ba 50px 50px, #00a4ba 51px 51px, #00a4ba 52px 52px, #00a4ba 53px 53px, #00a4ba 54px 54px, #00a4ba 55px 55px, #00a4ba 56px 56px, #00a4ba 57px 57px, #00a4ba 58px 58px, #00a4ba 59px 59px, #00a4ba 60px 60px, #00a4ba 61px 61px, #00a4ba 62px 62px, #00a4ba 63px 63px, #00a4ba 64px 64px, #00a4ba 65px 65px, #00a4ba 66px 66px, #00a4ba 67px 67px, #00a4ba 68px 68px, #00a4ba 69px 69px, #00a4ba 70px 70px, #00a4ba 71px 71px, #00a4ba 72px 72px, #00a4ba 73px 73px, #00a4ba 74px 74px, #00a4ba 75px 75px, #00a4ba 76px 76px, #00a4ba 77px 77px, #00a4ba 78px 78px, #00a4ba 79px 79px, #00a4ba 80px 80px, #00a4ba 81px 81px, #00a4ba 82px 82px, #00a4ba 83px 83px, #00a4ba 84px 84px, #00a4ba 85px 85px, #00a4ba 86px 86px, #00a4ba 87px 87px, #00a4ba 88px 88px, #00a4ba 89px 89px, #00a4ba 90px 90px, #00a4ba 91px 91px, #00a4ba 92px 92px, #00a4ba 93px 93px, #00a4ba 94px 94px, #00a4ba 95px 95px, #00a4ba 96px 96px, #00a4ba 97px 97px, #00a4ba 98px 98px, #00a4ba 99px 99px, #00a4ba 100px 100px;
+  text-shadow: #00a4ba 1px 1px, #00a4ba 2px 2px, #00a4ba 3px 3px,
+    #00a4ba 4px 4px, #00a4ba 5px 5px, #00a4ba 6px 6px, #00a4ba 7px 7px,
+    #00a4ba 8px 8px, #00a4ba 9px 9px, #00a4ba 10px 10px, #00a4ba 11px 11px,
+    #00a4ba 12px 12px, #00a4ba 13px 13px, #00a4ba 14px 14px, #00a4ba 15px 15px,
+    #00a4ba 16px 16px, #00a4ba 17px 17px, #00a4ba 18px 18px, #00a4ba 19px 19px,
+    #00a4ba 20px 20px, #00a4ba 21px 21px, #00a4ba 22px 22px, #00a4ba 23px 23px,
+    #00a4ba 24px 24px, #00a4ba 25px 25px, #00a4ba 26px 26px, #00a4ba 27px 27px,
+    #00a4ba 28px 28px, #00a4ba 29px 29px, #00a4ba 30px 30px, #00a4ba 31px 31px,
+    #00a4ba 32px 32px, #00a4ba 33px 33px, #00a4ba 34px 34px, #00a4ba 35px 35px,
+    #00a4ba 36px 36px, #00a4ba 37px 37px, #00a4ba 38px 38px, #00a4ba 39px 39px,
+    #00a4ba 40px 40px, #00a4ba 41px 41px, #00a4ba 42px 42px, #00a4ba 43px 43px,
+    #00a4ba 44px 44px, #00a4ba 45px 45px, #00a4ba 46px 46px, #00a4ba 47px 47px,
+    #00a4ba 48px 48px, #00a4ba 49px 49px, #00a4ba 50px 50px, #00a4ba 51px 51px,
+    #00a4ba 52px 52px, #00a4ba 53px 53px, #00a4ba 54px 54px, #00a4ba 55px 55px,
+    #00a4ba 56px 56px, #00a4ba 57px 57px, #00a4ba 58px 58px, #00a4ba 59px 59px,
+    #00a4ba 60px 60px, #00a4ba 61px 61px, #00a4ba 62px 62px, #00a4ba 63px 63px,
+    #00a4ba 64px 64px, #00a4ba 65px 65px, #00a4ba 66px 66px, #00a4ba 67px 67px,
+    #00a4ba 68px 68px, #00a4ba 69px 69px, #00a4ba 70px 70px, #00a4ba 71px 71px,
+    #00a4ba 72px 72px, #00a4ba 73px 73px, #00a4ba 74px 74px, #00a4ba 75px 75px,
+    #00a4ba 76px 76px, #00a4ba 77px 77px, #00a4ba 78px 78px, #00a4ba 79px 79px,
+    #00a4ba 80px 80px, #00a4ba 81px 81px, #00a4ba 82px 82px, #00a4ba 83px 83px,
+    #00a4ba 84px 84px, #00a4ba 85px 85px, #00a4ba 86px 86px, #00a4ba 87px 87px,
+    #00a4ba 88px 88px, #00a4ba 89px 89px, #00a4ba 90px 90px, #00a4ba 91px 91px,
+    #00a4ba 92px 92px, #00a4ba 93px 93px, #00a4ba 94px 94px, #00a4ba 95px 95px,
+    #00a4ba 96px 96px, #00a4ba 97px 97px, #00a4ba 98px 98px, #00a4ba 99px 99px,
+    #00a4ba 100px 100px;
 }
 #contact-section {
   padding: 90px 0;
@@ -448,7 +479,8 @@ figure figcaption p {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -webkit-transition: border-color ease-in-out 0.15s,
+    box-shadow ease-in-out 0.15s;
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   border-radius: 1px;
@@ -468,7 +500,8 @@ figure figcaption p {
   background-image: none;
   border: 1px solid #cccccc;
   box-shadow: none;
-  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -webkit-transition: border-color ease-in-out 0.15s,
+    box-shadow ease-in-out 0.15s;
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
@@ -476,7 +509,7 @@ figure figcaption p {
 #contact-section .email,
 #contact-section .phone {
   text-align: center;
-  background: #F7F7F7;
+  background: #f7f7f7;
   padding: 20px 0 40px 0;
   margin-bottom: 20px;
 }
@@ -498,10 +531,10 @@ figure figcaption p {
 #map-canvas {
   width: 100%;
   height: 350px;
-  background-color: #CCC;
+  background-color: #ccc;
 }
 #footer {
-  margin-top: 100px; 
+  margin-top: 100px;
   background: #fff;
   padding: 25px 0;
   color: #555;
@@ -527,7 +560,7 @@ figure figcaption p {
   color: #02bdd5;
 }
 .cd-headline.slide .cd-words-wrapper {
-  color: #3543DD;
+  color: #3543dd;
 }
 ul.social-icons {
   height: auto;
@@ -542,7 +575,7 @@ ul.social-icons li {
 }
 #copyright a:hover,
 #copyright nav .menu li a:hover {
-  color: #e4e4e4!important;
+  color: #e4e4e4 !important;
 }
 #copyright a,
 #copyright a:hover {
@@ -565,7 +598,7 @@ ul.social-icons li {
 .global-page-header .breadcrumb {
   background: none;
   font-size: 16px;
-  padding: 8px  0;
+  padding: 8px 0;
 }
 .global-page-header .breadcrumb .active {
   color: #fff;
@@ -601,26 +634,26 @@ ul.social-icons li {
   color: #fff;
   border: none;
   padding: 12px 40px;
-  -webkit-transition: .2s all;
-  -o-transition: .2s all;
-  transition: .2s all;
+  -webkit-transition: 0.2s all;
+  -o-transition: 0.2s all;
+  transition: 0.2s all;
   letter-spacing: 2px;
   font-size: 15px;
 }
 #product-showcase-banner .block .buttons .btn-demo {
   background: #5abd4f;
   margin-right: 8px;
-  border-bottom: 3px solid #429E38;
+  border-bottom: 3px solid #429e38;
 }
 #product-showcase-banner .block .buttons .btn-demo:hover {
-  background: #429E38;
+  background: #429e38;
 }
 #product-showcase-banner .block .buttons .btn-buy {
-  background: #00AEDA;
-  border-bottom: 3px solid #0190B5;
+  background: #00aeda;
+  border-bottom: 3px solid #0190b5;
 }
 #product-showcase-banner .block .buttons .btn-buy:hover {
-  background: #0190B5;
+  background: #0190b5;
 }
 #product-showcase-banner .block .buttons .btn-buy span {
   margin-right: 8px;
@@ -658,7 +691,8 @@ ul.social-icons li {
   -ms-transform: translateY(60px);
   -o-transform: translateY(60px);
   transform: translateY(60px);
-  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transition: -webkit-transform 0.35s
+    cubic-bezier(0.645, 0.045, 0.355, 1);
   -moz-transition: -moz-transform 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
   -o-transition: -o-transform 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: transform 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -721,9 +755,9 @@ ul.social-icons li {
   left: 0;
   bottom: 0;
   opacity: 0;
-  -webkit-transition: .3s all;
-  -o-transition: .3s all;
-  transition: .3s all;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
 }
 #related-items .block .img-overly .overly a {
   position: absolute;
@@ -750,8 +784,9 @@ ul.social-icons li {
 }
 .works.service-page figure .buttons {
   position: absolute;
-  top: 45%;
-  left: 13%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 #clients {
   padding: 30px 0 60px;
@@ -815,7 +850,7 @@ ul.social-icons li {
   margin-top: 30px;
 }
 .team-member:hover .team-img img {
-  opacity: .8;
+  opacity: 0.8;
 }
 .team-member .team-img {
   position: relative;
@@ -860,10 +895,10 @@ ul.social-icons li {
   background: #02bdd5;
 }
 .about-feature .about-feature-2 {
-  background: #00B0C7;
+  background: #00b0c7;
 }
 .about-feature .about-feature-3 {
-  background: #00A6BB;
+  background: #00a6bb;
 }
 #blog-full-width {
   padding: 40px 0 80px;
@@ -872,7 +907,7 @@ article {
   padding: 30px 0;
 }
 .blog-content h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .blog-content h2 a {
   color: #444;
@@ -885,7 +920,7 @@ article {
   margin-bottom: 25px;
 }
 .blog-content .blog-meta span:after {
-  content: '/';
+  content: "/";
   padding: 0 3px 0 6px;
 }
 .blog-content .blog-meta a {

@@ -122,19 +122,18 @@ const Home = () => {
                     <div className="img-wrapper">
                       <img
                         src={project.projectImage}
-                        className="img-responsive"
+                        className="img-fluid"
                         alt="this is a title"
                       />
                       <div className="overlay">
                         <div className="buttons">
                           <a
-                            rel="gallery"
-                            className="fancybox"
+                            target="_blank"
                             href={project.demoLink}
                           >
                             Demo
                           </a>
-                          <a target="_blank" href="">
+                          <a target="_blank" href={project.repoLink}>
                             Details
                           </a>
                         </div>
