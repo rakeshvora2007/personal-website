@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production && cp -r css build/css && cp -r fonts build/fonts && cp -r less build/less && cp -r js build/js && cp -r images build/images",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -40,10 +40,19 @@
     "@babel/core": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
     "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.8.0",
     "babel-loader": "^8.0.6",
+    "bootstrap": "^4.5.0",
     "css-loader": "^3.4.2",
     "file-loader": "^6.0.0",
     "gh-pages": "^2.2.0",
-    "html-webpack-plugin": "^3.2.0"
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.5.1",
+    "node-sass": "^4.14.1",
+    "popper.js": "^1.16.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "wow.js": "^1.2.2"
   }
 }

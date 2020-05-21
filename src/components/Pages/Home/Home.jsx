@@ -5,14 +5,12 @@ import about from "../../../images/about.jpg";
 
 const Home = () => {
   const [data, setData] = useState([]);
-  console.log("HOME");
   useEffect(() => {
     let source = axios.CancelToken.source();
     let unmounted = false;
     axios
       .get("https://personal-website--backend.herokuapp.com/project", {cancelToken: source.token})
       .then(({ data }) => {
-        console.log("I got the data")
         if(!unmounted) {
           setData(data.data.reverse());
         }
@@ -27,7 +25,6 @@ const Home = () => {
     return () => {
       unmounted = true;
       source.cancel("Cancelling in cleanup");
-      console.log("unmounted....")
     };
   }, []);
 
