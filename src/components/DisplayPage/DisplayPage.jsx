@@ -19,7 +19,7 @@ const DisplayPage = ({page="Home"}) => {
     }
 
     return (
-        <div style={{position: "relative",}}>
+        <div style={{position: "relative"}}>
            {selectedPage(page)} 
         </div>
     )

@@ -109,7 +109,7 @@ a:hover {
   background: transparent;
 }
 #top-bar.animated-header {
-  padding: 20px 0;
+  padding: 0;
   background: #ffffff;
   box-shadow: none;
 }

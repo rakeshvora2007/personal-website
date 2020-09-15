@@ -49,7 +49,7 @@ const Home = () => {
                   </h1>
                 </section>
                 <h2 className="wow fadeInUp animated" data-wow-delay=".6s">
-                  With 3 years experience, I've occupied many roles including
+                  With 4+ years experience, I've occupied many roles including
                   web and mobile application developer,
                   <br /> software engineer. This site showcases some of my work.
                 </h2>

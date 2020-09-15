@@ -42,10 +42,8 @@
 @media(min-width: 768px) {
 
   .navbar-brand > a > img {
-      height: 120px;
-      width: 119px;
-      padding: 19px;
-      margin: -50px;
+      height: 80px;
+      width: 80px;
   }
 
 }
@@ -71,11 +69,8 @@ px      68    160    252    */
     padding: 6px 8px;
   }
   .navbar-brand > a > img {
-    height: 70px;
-    width: 70px;
-    padding: 0;
-    margin-left: 10px;
-    margin-top: -27px;
+    height: 40px;
+    width: 40px;
   }
   #hero-area {
     padding: 140px 0;
@@ -118,9 +113,6 @@ px      68    160    252    */
     background: #fff;
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 0.09px rgba(0, 0, 0, 0.15);
-  }
-  .navbar-collapse {
-    background: #333333;
   }
   #top-bar .main-menu li > a {
     color: #fff;
